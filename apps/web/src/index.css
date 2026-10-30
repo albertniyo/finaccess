@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  --ink: #14201a;
+  --muted: #4a5c52;
+  --paper: #f3efe6;
+  --paper-2: #e7e1d4;
+  --accent: #0f6b4c;
+  --accent-ink: #f7faf8;
+  --warn: #8a4b12;
+  --error: #8b1e1e;
+  --line: #c9c1b0;
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #d9e8df 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #efe4c8 0%, transparent 50%),
+    var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: #0a4d37;
+}
+
+h1,
+h2,
+.brand,
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+code {
+  font-size: 0.92em;
+  background: var(--paper-2);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+#root {
+  min-height: 100vh;
+}
