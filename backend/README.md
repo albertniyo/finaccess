@@ -25,6 +25,16 @@ API docs: http://localhost:8000/docs
 uv run pytest
 ```
 
+## Docker / Render
+
+```bash
+cd backend
+docker build -t finaccess-api .
+docker run --rm -p 8000:8000 -e PORT=8000 finaccess-api
+```
+
+On [Render](https://render.com): create a **Web Service** with Docker, Root Directory `backend`, and health check path `/health`. Render sets `PORT` automatically.
+
 ## Layout
 
 | Path | Role |
