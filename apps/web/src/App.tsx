@@ -51,7 +51,7 @@ function EvidenceStatus() {
       {health.error ? (
         <p className="status-line warn">API unreachable</p>
       ) : !health.data ? (
-        <p className="status-line">Connecting…</p>
+        <p className="status-line">Waking the API…</p>
       ) : (
         <>
           <p className={`status-line ${ok ? 'ok' : 'warn'}`}>

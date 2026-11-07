@@ -24,15 +24,34 @@ export class ApiError extends Error {
   }
 }
 
+// A sleeping free-tier host can take about a minute to wake; until then its proxy fails without CORS headers.
+const RETRY_DELAYS_MS = [2000, 3000, 5000, 8000, 10000, 12000, 15000]
+const RETRYABLE_STATUS = new Set([502, 503, 504])
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+async function fetchWithWake(url: string, init: RequestInit): Promise<Response> {
+  for (let attempt = 0; ; attempt++) {
+    const last = attempt >= RETRY_DELAYS_MS.length
+    try {
+      const response = await fetch(url, init)
+      if (last || !RETRYABLE_STATUS.has(response.status)) return response
+    } catch (err) {
+      if (last) throw err
+    }
+    await sleep(RETRY_DELAYS_MS[attempt])
+  }
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let response: Response
   try {
-    response = await fetch(`${API_BASE}${path}`, {
+    response = await fetchWithWake(`${API_BASE}${path}`, {
       ...init,
       headers: { Accept: 'application/json', ...(init?.headers ?? {}) },
     })
   } catch {
-    throw new ApiError(0, `Cannot reach the API at ${API_BASE}. It may be starting up — retry in a few seconds.`)
+    throw new ApiError(0, `Cannot reach the API at ${API_BASE}.`)
   }
   if (!response.ok) {
     let detail = response.statusText
