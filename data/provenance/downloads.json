@@ -1,0 +1,74 @@
+{
+  "files": [
+    {
+      "id": "A1",
+      "path": "data/raw/eicv7/EICV7_Main_Indicator_Report.pdf",
+      "title": "EICV7 Main Indicators Report 2023/24",
+      "publisher": "NISR",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-07/EICV7_Main%20Indicator%20Report.pdf",
+      "bytes": 6239762,
+      "sha256": "6105321b6edaeac40df291d9b2450cec121cd0a0b7b750554aefabbfd5b2873c",
+      "retrieved_at": "2026-11-07T20:28:29+00:00"
+    },
+    {
+      "id": "A2",
+      "path": "data/raw/eicv7/EICV7_Tables_MainIndicatorReport.xlsx",
+      "title": "EICV7 Main Indicator Report \u2014 statistical tables",
+      "publisher": "NISR",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-04/EICV7_Tables_MainIndicatorReport.xlsx",
+      "bytes": 673527,
+      "sha256": "8a01ec05d851d9813a855e513eb0e74046a070ca0235df9e81730560028e350d",
+      "retrieved_at": "2026-11-07T20:27:52+00:00"
+    },
+    {
+      "id": "A3a",
+      "path": "data/raw/eicv7/EICV7_Poverty_Profile.pdf",
+      "title": "EICV7 Poverty Profile Report 2023/24",
+      "publisher": "NISR",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-07/EICV7_Poverty%20Profile.pdf",
+      "bytes": 2882677,
+      "sha256": "8e711487c011ae83dd19924af35bf62e5e0d819343db2a2b65abb26373ad545a",
+      "retrieved_at": "2026-11-07T20:28:31+00:00"
+    },
+    {
+      "id": "A3b",
+      "path": "data/raw/eicv7/EICV7_Tables_Rwanda_Poverty_Profile.xlsx",
+      "title": "EICV7 Poverty Profile \u2014 statistical tables",
+      "publisher": "NISR",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-05/EICV7_Tables_Rwanda_Poverty_Profile.xlsx",
+      "bytes": 142801,
+      "sha256": "7b47093b7cf7315784a7fe61d9aa912feeafbfeb8f2372b012b7d8b63b5ec142",
+      "retrieved_at": "2026-11-07T20:28:31+00:00"
+    },
+    {
+      "id": "A4",
+      "path": "data/raw/finscope/Rwanda-Finscope-2024-Report_compressed.pdf",
+      "title": "FinScope Rwanda 2024 Report",
+      "publisher": "Access to Finance Rwanda / NISR",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2024-09/Rwanda-Finscope-2024-Report_compressed.pdf",
+      "bytes": 2033967,
+      "sha256": "8941ee50bf7c7ed37b0747312b95a70410a745f8b62d7da050517322529f6138",
+      "retrieved_at": "2026-11-07T20:28:33+00:00"
+    },
+    {
+      "id": "C1",
+      "path": "data/raw/geo/geoBoundaries-RWA-ADM2.geojson",
+      "title": "geoBoundaries Rwanda ADM2 (districts)",
+      "publisher": "geoBoundaries (William & Mary geoLab)",
+      "url": "https://github.com/wmgeolab/geoBoundaries/raw/main/releaseData/gbOpen/RWA/ADM2/geoBoundaries-RWA-ADM2.geojson",
+      "bytes": 6322416,
+      "sha256": "efe97dd43536b7de34a9b07bf0408a766f2020ac54765b1e1f9da3631b941299",
+      "retrieved_at": "2026-11-07T20:28:40+00:00"
+    },
+    {
+      "id": "C1s",
+      "path": "data/raw/geo/geoBoundaries-RWA-ADM2_simplified.geojson",
+      "title": "geoBoundaries Rwanda ADM2 (districts), simplified",
+      "publisher": "geoBoundaries (William & Mary geoLab)",
+      "url": "https://github.com/wmgeolab/geoBoundaries/raw/main/releaseData/gbOpen/RWA/ADM2/geoBoundaries-RWA-ADM2_simplified.geojson",
+      "bytes": 289074,
+      "sha256": "56b0995c7a7735847659b766e00c5cfa29b1b3a197f231dc396f399948c46c09",
+      "retrieved_at": "2026-11-07T20:30:55+00:00"
+    }
+  ]
+}
