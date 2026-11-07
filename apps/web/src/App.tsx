@@ -1,9 +1,9 @@
 import type { ComponentType, SVGProps } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { getHealth } from './api/client'
+import { API_BASE } from './api/client'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { BookIcon, BriefIcon, CheckIcon, CompassMark, HomeIcon, MapIcon, RankIcon } from './components/Icons'
-import { useApi } from './hooks/useApi'
+import { type ApiState, useApiStatus } from './hooks/useApiStatus'
 import { useDocumentTitle } from './hooks/useDocumentTitle'
 import { Brief } from './pages/Brief'
 import { Explorer } from './pages/Explorer'
@@ -41,27 +41,52 @@ function NotFound() {
   )
 }
 
+const API_LABELS: Record<ApiState, string> = {
+  checking: 'Checking API…',
+  waking: 'API waking up…',
+  online: 'API online',
+  offline: 'API offline',
+}
+
 function EvidenceStatus() {
-  const health = useApi('health', getHealth)
-  const v = health.data?.validation
-  const ok = health.data?.data === 'ok' && v?.failed === 0
+  const { state, health, latencyMs, recheck } = useApiStatus()
+  const v = health?.validation
+  const dataOk = health?.data === 'ok'
+  const checksOk = dataOk && v?.failed === 0
+  const latency = latencyMs == null ? null : latencyMs < 1000 ? `${latencyMs} ms` : `${(latencyMs / 1000).toFixed(1)} s`
+  const details = [health?.version && `v${health.version}`, state === 'online' && latency]
+    .filter(Boolean)
+    .join(' · ')
+
   return (
     <div className="status-card" aria-live="polite">
       <p className="status-title">Evidence status</p>
-      {health.error ? (
-        <p className="status-line warn">API unreachable</p>
-      ) : !health.data ? (
-        <p className="status-line">Waking the API…</p>
-      ) : (
+      <p
+        className={`api-line api-${state}`}
+        title={API_BASE}
+      >
+        <span className="api-dot" aria-hidden="true" />
+        <span>{API_LABELS[state]}</span>
+        {details && <span className="api-meta">{details}</span>}
+        {state === 'offline' && (
+          <button type="button" className="api-retry" onClick={recheck}>
+            Retry
+          </button>
+        )}
+      </p>
+      {health && (
         <>
-          <p className={`status-line ${ok ? 'ok' : 'warn'}`}>
-            {ok && <CheckIcon width={16} height={16} />} {v?.passed ?? 0} checks passing
+          <p className={`status-line ${checksOk ? 'ok' : 'warn'}`}>
+            {checksOk && <CheckIcon width={16} height={16} />}
+            {dataOk ? `${v?.passed ?? 0} checks passing` : 'Processed data missing'}
           </p>
           <p className="status-sub">
-            {health.data.districts} districts · EICV7 2023/24 · FinScope 2024
+            {state === 'offline' && 'Last known · '}
+            {health.districts} districts · EICV7 2023/24 · FinScope 2024
           </p>
         </>
       )}
+      {state === 'waking' && <p className="status-sub">Free-tier hosting sleeps when idle; this can take a minute.</p>}
     </div>
   )
 }
