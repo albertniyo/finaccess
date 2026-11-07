@@ -1,6 +1,6 @@
 """Intervention Gap Explorer indicator series."""
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException, Query
 
 from compass import indicators as indicator_logic
 
@@ -9,8 +9,10 @@ router = APIRouter()
 
 @router.get("")
 def get_indicators(
-    geo: str | None = Query(default=None, description="Province or district filter"),
-    urban_rural: str | None = Query(default=None, alias="urbanRural"),
+    province: str | None = Query(default=None, description="Province filter, e.g. 'Northern'"),
 ) -> dict:
-    """District (or other supported unit) indicator series for the Gap Explorer."""
-    return indicator_logic.get_indicators(geo=geo, urban_rural=urban_rural)
+    """District indicator series (with national and province context) for the Gap Explorer."""
+    try:
+        return indicator_logic.get_indicators(province=province)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
