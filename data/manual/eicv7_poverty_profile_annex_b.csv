@@ -1,0 +1,31 @@
+district,eicv5_2017_modelled,eicv7_2024,decrease_pp,note
+Nyamagabe,67.6,51.4,16.2,
+Gisagara,59.5,45.6,13.9,
+Rusizi,59.0,44.2,14.9,
+Nyanza,46.9,43.3,3.6,
+Nyamasheke,53.6,42.8,10.8,Excel Table A9.23 gives 42.67
+Rutsiro,59.9,40.8,19.1,
+Nyaruguru,52.6,39.7,12.9,
+Kamonyi,53.0,39.7,13.3,
+Rubavu,49.2,38.8,10.4,
+Karongi,53.0,38.2,14.8,
+Kayonza,51.0,36.6,14.5,
+Nyagatare,48.6,36.4,12.3,
+Ngoma,34.0,30.9,3.1,
+Ngororero,44.4,30.2,14.2,
+Gakenke,36.7,24.5,12.2,
+Huye,39.4,24.2,15.3,
+Rwamagana,29.6,23.8,5.7,Excel Table A9.23 gives 23.86 (rounds to 23.9)
+Bugesera,40.8,23.7,17.1,
+Burera,25.5,22.0,3.5,Excel Table A9.23 gives 21.79
+Rulindo,35.2,21.6,13.6,
+Musanze,42.3,21.0,21.3,
+Nyabihu,39.6,20.2,19.4,Excel Table A9.23 gives 20.41
+Gatsibo,38.0,18.4,19.6,
+Ruhango,26.2,15.0,11.2,
+Muhanga,33.2,15.0,18.3,Decrease printed 18.3; 33.2 - 15.0 = 18.2 (rounding of unrounded inputs)
+Kirehe,26.0,14.2,11.7,Decrease printed 11.7; 26.0 - 14.2 = 11.8 (rounding of unrounded inputs)
+Gicumbi,24.6,13.3,11.3,
+Gasabo,18.1,11.1,7.0,
+Kicukiro,8.2,6.9,1.3,
+Nyarugenge,11.6,6.8,4.8,

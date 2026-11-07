@@ -1,0 +1,18 @@
+dimension,group,year,banked,other_formal,informal_only,excluded,source_figure,transcription_note
+national,All adults,2020,22,55,16,7,Figure 5 (p.27),
+national,All adults,2024,22,70,4,4,Figure 5 (p.27),
+area,Rural,2024,14,76,6,4,Figure 6 (p.28),
+area,Urban,2024,39,56,2,3,Figure 6 (p.28),Merged label "23" read visually at 300 dpi as informal 2 / excluded 3; report text: 97% of urban adults included
+gender,Male,2024,27,67,3,3,Figure 7 (p.28),
+gender,Female,2024,17,73,6,4,Figure 7 (p.28),
+age,16-17,2024,12,64,8,16,Figure 8 (p.29),
+age,18-30,2024,20,73,4,4,Figure 8 (p.29),
+age,31-60,2024,26,69,4,2,Figure 8 (p.29),
+age,61+,2024,18,68,7,7,Figure 8 (p.29),
+disability,Adults with disabilities,2024,14,74,5,7,Figure 9 (p.29),
+refugee,Refugees,2024,37,62,0,1,Figure 10 (p.29),Only the red (excluded) label "1" is printed; informal-only segment not visible — recorded as 0
+livelihood,Formal sector,2024,69,31,0,0,Figure 11 (p.30),Only two segments printed
+livelihood,Self employed,2024,43,56,1,0,Figure 11 (p.30),Trailing "1" is in the informal-only (green) segment at 300 dpi; no excluded segment visible
+livelihood,Dependents,2024,15,71,4,11,Figure 11 (p.30),
+livelihood,Informal sector,2024,14,76,6,3,Figure 11 (p.30),
+livelihood,Farming activities,2024,17,77,4,1,Figure 11 (p.30),

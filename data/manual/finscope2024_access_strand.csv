@@ -1,0 +1,37 @@
+level,name,banked,other_formal,informal_only,excluded,source_figure,transcription_note
+national,Rwanda,22,70,4,4,Figure 5 (p.27),Text labels; matches report narrative (96% included / 92% formal / 4% excluded)
+province,City of Kigali,57,41,1,1,Figure 12 (p.30),Merged label "11" read visually as informal 1 / excluded 1
+province,Southern,15,76,5,4,Figure 12 (p.30),
+province,Northern,15,75,5,5,Figure 12 (p.30),
+province,Eastern,17,75,5,3,Figure 12 (p.30),
+province,Western,15,75,5,5,Figure 12 (p.30),
+district,Nyaruguru,6,78,5,10,Figure 13 (p.31),
+district,Ngoma,9,77,6,8,Figure 13 (p.31),
+district,Rulindo,13,74,4,8,Figure 13 (p.31),
+district,Nyabihu,13,74,5,8,Figure 13 (p.31),
+district,Gakenke,18,69,5,8,Figure 13 (p.31),
+district,Ngororero,10,78,5,7,Figure 13 (p.31),
+district,Gicumbi,8,75,11,7,Figure 13 (p.31),
+district,Rutsiro,9,78,6,6,Figure 13 (p.31),
+district,Rusizi,22,68,5,6,Figure 13 (p.31),
+district,Nyamasheke,13,78,3,6,Figure 13 (p.31),
+district,Huye,15,73,6,6,Figure 13 (p.31),
+district,Kayonza,11,76,8,5,Figure 13 (p.31),
+district,Nyanza,17,74,4,4,Figure 13 (p.31),
+district,Gisagara,10,77,9,4,Figure 13 (p.31),
+district,Rubavu,22,71,4,3,Figure 13 (p.31),
+district,Karongi,8,83,6,3,Figure 13 (p.31),
+district,Kirehe,7,86,5,3,Figure 13 (p.31),
+district,Kamonyi,16,76,4,3,Figure 13 (p.31),
+district,Ruhango,22,70,5,3,Figure 13 (p.31),
+district,Nyagatare,17,77,4,3,Figure 13 (p.31),
+district,Rwamagana,27,68,3,2,Figure 13 (p.31),
+district,Muhanga,17,76,5,2,Figure 13 (p.31),
+district,Kicukiro,62,35,2,2,Figure 13 (p.31),Merged label "22" read visually at 600 dpi as informal 2 / excluded 2
+district,Bugesera,23,71,5,2,Figure 13 (p.31),
+district,Gasabo,51,46,2,1,Figure 13 (p.31),Merged label "21" read visually at 600 dpi as informal 2 / excluded 1
+district,Musanze,24,71,5,1,Figure 13 (p.31),
+district,Gatsibo,23,73,3,1,Figure 13 (p.31),Merged label "31" read visually at 600 dpi as informal 3 / excluded 1
+district,Nyamagabe,11,84,4,1,Figure 13 (p.31),
+district,Nyarugenge,59,40,0,1,Figure 13 (p.31),Only the red (excluded) label "1" is printed; informal-only segment not visible — recorded as 0 (<0.5)
+district,Burera,11,87,2,1,Figure 13 (p.31),Merged label "21" read visually at 600 dpi as informal 2 / excluded 1

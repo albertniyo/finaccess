@@ -1,0 +1,637 @@
+{
+  "method": "pdftotext -layout digit-string comparison",
+  "passed": 90,
+  "failed": 0,
+  "rows": [
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "national:Rwanda",
+      "expected": "227044",
+      "printed": "227044",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "province:City of Kigali",
+      "expected": "574111",
+      "printed": "574111",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "province:Southern",
+      "expected": "157654",
+      "printed": "157654",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "province:Northern",
+      "expected": "157555",
+      "printed": "157555",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "province:Eastern",
+      "expected": "177553",
+      "printed": "177553",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "province:Western",
+      "expected": "157555",
+      "printed": "157555",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyaruguru",
+      "expected": "678510",
+      "printed": "678510",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Ngoma",
+      "expected": "97768",
+      "printed": "97768",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Rulindo",
+      "expected": "137448",
+      "printed": "137448",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyabihu",
+      "expected": "137458",
+      "printed": "137458",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Gakenke",
+      "expected": "186958",
+      "printed": "186958",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Ngororero",
+      "expected": "107857",
+      "printed": "107857",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Gicumbi",
+      "expected": "875117",
+      "printed": "875117",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Rutsiro",
+      "expected": "97866",
+      "printed": "97866",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Rusizi",
+      "expected": "226856",
+      "printed": "226856",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyamasheke",
+      "expected": "137836",
+      "printed": "137836",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Huye",
+      "expected": "157366",
+      "printed": "157366",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Kayonza",
+      "expected": "117685",
+      "printed": "117685",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyanza",
+      "expected": "177444",
+      "printed": "177444",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Gisagara",
+      "expected": "107794",
+      "printed": "107794",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Rubavu",
+      "expected": "227143",
+      "printed": "227143",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Karongi",
+      "expected": "88363",
+      "printed": "88363",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Kirehe",
+      "expected": "78653",
+      "printed": "78653",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Kamonyi",
+      "expected": "167643",
+      "printed": "167643",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Ruhango",
+      "expected": "227053",
+      "printed": "227053",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyagatare",
+      "expected": "177743",
+      "printed": "177743",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Rwamagana",
+      "expected": "276832",
+      "printed": "276832",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Muhanga",
+      "expected": "177652",
+      "printed": "177652",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Kicukiro",
+      "expected": "623522",
+      "printed": "623522",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Bugesera",
+      "expected": "237152",
+      "printed": "237152",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Gasabo",
+      "expected": "514621",
+      "printed": "514621",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Musanze",
+      "expected": "247151",
+      "printed": "247151",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Gatsibo",
+      "expected": "237331",
+      "printed": "237331",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyamagabe",
+      "expected": "118441",
+      "printed": "118441",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Nyarugenge",
+      "expected": "59401",
+      "printed": "59401",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand.csv",
+      "row": "district:Burera",
+      "expected": "118721",
+      "printed": "118721",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "national:All adults:2020",
+      "expected": "2255167",
+      "printed": "2255167",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "national:All adults:2024",
+      "expected": "227044",
+      "printed": "227044",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "area:Rural:2024",
+      "expected": "147664",
+      "printed": "147664",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "area:Urban:2024",
+      "expected": "395623",
+      "printed": "395623",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "gender:Male:2024",
+      "expected": "276733",
+      "printed": "276733",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "gender:Female:2024",
+      "expected": "177364",
+      "printed": "177364",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "age:16-17:2024",
+      "expected": "1264816",
+      "printed": "1264816",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "age:18-30:2024",
+      "expected": "207344",
+      "printed": "207344",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "age:31-60:2024",
+      "expected": "266942",
+      "printed": "266942",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "age:61+:2024",
+      "expected": "186877",
+      "printed": "186877",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "disability:Adults with disabilities:2024",
+      "expected": "147457",
+      "printed": "147457",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "refugee:Refugees:2024",
+      "expected": "37621",
+      "printed": "37621",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "livelihood:Formal sector:2024",
+      "expected": "6931",
+      "printed": "6931",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "livelihood:Self employed:2024",
+      "expected": "43561",
+      "printed": "43561",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "livelihood:Dependents:2024",
+      "expected": "1571411",
+      "printed": "1571411",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "livelihood:Informal sector:2024",
+      "expected": "147663",
+      "printed": "147663",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_access_strand_groups.csv",
+      "row": "livelihood:Farming activities:2024",
+      "expected": "177741",
+      "printed": "177741",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Mobile money",
+      "expected": "77",
+      "printed": "77",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Umurenge SACCO",
+      "expected": "28",
+      "printed": "28",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Insurance",
+      "expected": "27",
+      "printed": "27",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Pension",
+      "expected": "25",
+      "printed": "25",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Bank",
+      "expected": "22",
+      "printed": "22",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "MFI",
+      "expected": "7",
+      "printed": "7",
+      "pass": true
+    },
+    {
+      "file": "finscope2024_products.csv",
+      "row": "Any financial product account in own name",
+      "expected": "86",
+      "printed": "86",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyamagabe",
+      "expected": "67.6 51.4 16.2",
+      "printed": "67.6 51.4 16.2",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Gisagara",
+      "expected": "59.5 45.6 13.9",
+      "printed": "59.5 45.6 13.9",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Rusizi",
+      "expected": "59.0 44.2 14.9",
+      "printed": "59.0 44.2 14.9",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyanza",
+      "expected": "46.9 43.3 3.6",
+      "printed": "46.9 43.3 3.6",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyamasheke",
+      "expected": "53.6 42.8 10.8",
+      "printed": "53.6 42.8 10.8",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Rutsiro",
+      "expected": "59.9 40.8 19.1",
+      "printed": "59.9 40.8 19.1",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyaruguru",
+      "expected": "52.6 39.7 12.9",
+      "printed": "52.6 39.7 12.9",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Kamonyi",
+      "expected": "53.0 39.7 13.3",
+      "printed": "53.0 39.7 13.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Rubavu",
+      "expected": "49.2 38.8 10.4",
+      "printed": "49.2 38.8 10.4",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Karongi",
+      "expected": "53.0 38.2 14.8",
+      "printed": "53.0 38.2 14.8",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Kayonza",
+      "expected": "51.0 36.6 14.5",
+      "printed": "51.0 36.6 14.5",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyagatare",
+      "expected": "48.6 36.4 12.3",
+      "printed": "48.6 36.4 12.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Ngoma",
+      "expected": "34.0 30.9 3.1",
+      "printed": "34.0 30.9 3.1",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Ngororero",
+      "expected": "44.4 30.2 14.2",
+      "printed": "44.4 30.2 14.2",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Gakenke",
+      "expected": "36.7 24.5 12.2",
+      "printed": "36.7 24.5 12.2",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Huye",
+      "expected": "39.4 24.2 15.3",
+      "printed": "39.4 24.2 15.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Rwamagana",
+      "expected": "29.6 23.8 5.7",
+      "printed": "29.6 23.8 5.7",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Bugesera",
+      "expected": "40.8 23.7 17.1",
+      "printed": "40.8 23.7 17.1",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Burera",
+      "expected": "25.5 22.0 3.5",
+      "printed": "25.5 22.0 3.5",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Rulindo",
+      "expected": "35.2 21.6 13.6",
+      "printed": "35.2 21.6 13.6",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Musanze",
+      "expected": "42.3 21.0 21.3",
+      "printed": "42.3 21.0 21.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyabihu",
+      "expected": "39.6 20.2 19.4",
+      "printed": "39.6 20.2 19.4",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Gatsibo",
+      "expected": "38.0 18.4 19.6",
+      "printed": "38.0 18.4 19.6",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Ruhango",
+      "expected": "26.2 15.0 11.2",
+      "printed": "26.2 15.0 11.2",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Muhanga",
+      "expected": "33.2 15.0 18.3",
+      "printed": "33.2 15.0 18.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Kirehe",
+      "expected": "26.0 14.2 11.7",
+      "printed": "26.0 14.2 11.7",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Gicumbi",
+      "expected": "24.6 13.3 11.3",
+      "printed": "24.6 13.3 11.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Gasabo",
+      "expected": "18.1 11.1 7.0",
+      "printed": "18.1 11.1 7.0",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Kicukiro",
+      "expected": "8.2 6.9 1.3",
+      "printed": "8.2 6.9 1.3",
+      "pass": true
+    },
+    {
+      "file": "eicv7_poverty_profile_annex_b.csv",
+      "row": "Nyarugenge",
+      "expected": "11.6 6.8 4.8",
+      "printed": "11.6 6.8 4.8",
+      "pass": true
+    }
+  ]
+}
