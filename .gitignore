@@ -1,4 +1,9 @@
 # -------------------------------------
+# DATA — raw downloads are re-fetched by scripts/download_sources.py (checksums in data/provenance)
+data/raw/**
+!data/raw/README.md
+
+# -------------------------------------
 # PYTHON
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -16,8 +21,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+/lib/
+/lib64/
 parts/
 sdist/
 var/

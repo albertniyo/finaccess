@@ -1,0 +1,11 @@
+# Docker build context is the repo root (see backend/Dockerfile); ship only what the API needs.
+*
+!backend/pyproject.toml
+!backend/uv.lock
+!backend/README.md
+!backend/app/
+!backend/compass/
+!data/processed/
+!data/provenance/
+**/__pycache__
+**/*.py[cod]
