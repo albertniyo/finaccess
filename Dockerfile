@@ -1,5 +1,5 @@
-# Build from the repository root so data/processed ships inside the image:
-#   docker build -f backend/Dockerfile -t finaccess-api .
+# The image needs backend/ and data/processed, so the build context is the repository root:
+#   docker build -t finaccess-api .
 FROM python:3.12-slim-bookworm
 
 COPY --from=ghcr.io/astral-sh/uv:0.13.4 /uv /usr/local/bin/uv

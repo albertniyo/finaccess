@@ -15,10 +15,10 @@ Processed data is read from `../data/processed`, or from `COMPASS_DATA_DIR` when
 
 ## Docker
 
-Build from the repository root so the image includes `data/processed`:
+The `Dockerfile` is at the repository root so the image can include `data/processed`. From the root:
 
 ```bash
-docker build -f backend/Dockerfile -t finaccess-api .
+docker build -t finaccess-api .
 docker run -d -p 8000:8000 --restart unless-stopped finaccess-api
 ```
 

@@ -93,14 +93,16 @@ committed data would change.
 
 ### API (Docker)
 
-The image bundles `data/processed`, so build from the repository root:
+The `Dockerfile` lives at the repository root because the image bundles `data/processed`:
 
 ```bash
-docker build -f backend/Dockerfile -t finaccess-api .
+docker build -t finaccess-api .
 docker run -d --name finaccess-api -p 8000:8000 --restart unless-stopped finaccess-api
 ```
 
 The container runs as a non-root user and reports health through Docker's `HEALTHCHECK` (`GET /health`).
+On a platform that builds from the repository (for example Render), leave the root directory empty so
+the build context is the repository root; the platform's `PORT` is honoured.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |

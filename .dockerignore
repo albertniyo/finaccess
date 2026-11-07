@@ -1,4 +1,4 @@
-# Docker build context is the repo root (see backend/Dockerfile); ship only what the API needs.
+# Build context is the repository root; ship only what the API image needs.
 *
 !backend/pyproject.toml
 !backend/uv.lock
