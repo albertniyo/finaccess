@@ -66,18 +66,6 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>
 }
 
-export type HealthResponse = {
-  status: string
-  version: string
-  data: string
-  districts: number
-  validation?: { passed: number | null; failed: number | null }
-}
-
-export function getHealth() {
-  return request<HealthResponse>('/health')
-}
-
 export function getSources() {
   return request<SourcesResponse>('/meta/sources')
 }

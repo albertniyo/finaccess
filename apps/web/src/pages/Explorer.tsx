@@ -51,8 +51,12 @@ export function Explorer() {
   const select = (name: string | null) => update({ district: name === selected ? null : name })
   const gapDistricts = data.districts.filter((d) => d.profile.type === 'access_gap').map((d) => d.district)
 
-  const sortHeader = (key: SortKey, label: string) => (
-    <th scope="col" aria-sort={sort.key === key ? (sort.desc ? 'descending' : 'ascending') : 'none'}>
+  const sortHeader = (key: SortKey, label: string, className?: string) => (
+    <th
+      scope="col"
+      className={className}
+      aria-sort={sort.key === key ? (sort.desc ? 'descending' : 'ascending') : 'none'}
+    >
       <button
         type="button"
         className="sort-btn"
@@ -199,7 +203,7 @@ export function Explorer() {
 
       <h2>District table</h2>
       <div className="table-scroll">
-        <table className="data-table">
+        <table className="data-table stack">
           <caption className="small muted">
             {visible.length} districts{province ? ` in ${province}` : ''}. Poverty intervals are published 95% CIs;
             FinScope intervals are approximate.
@@ -208,13 +212,17 @@ export function Explorer() {
             <tr>
               {sortHeader('district', 'District')}
               {sortHeader('poverty_rate', 'Poverty')}
-              <th scope="col">95% CI</th>
+              <th scope="col" className="opt-md">
+                95% CI
+              </th>
               {sortHeader('excluded', 'Excluded')}
-              {sortHeader('not_formally_served', 'Not formal')}
+              {sortHeader('not_formally_served', 'Not formal', 'opt-md')}
               {sortHeader('banked', 'Banked')}
-              {sortHeader('poverty_decrease', 'Poverty fall')}
-              {sortHeader('smartphone_households', 'Smartphone')}
-              <th scope="col">Access strand</th>
+              {sortHeader('poverty_decrease', 'Poverty fall', 'opt-md')}
+              {sortHeader('smartphone_households', 'Smartphone', 'opt-lg')}
+              <th scope="col" className="opt-xl">
+                Access strand
+              </th>
               <th scope="col">Profile & flags</th>
             </tr>
           </thead>
@@ -227,17 +235,31 @@ export function Explorer() {
                   </button>
                   <span className="def">{d.province}</span>
                 </th>
-                <td className="num">{formatEstimate(d.poverty_rate, 'poverty_rate')}</td>
-                <td className="num small">{formatCi(d.poverty_rate)}</td>
-                <td className="num">{formatEstimate(d.excluded, 'excluded')}</td>
-                <td className="num">{formatEstimate(d.not_formally_served, 'not_formally_served')}</td>
-                <td className="num">{formatEstimate(d.banked, 'banked')}</td>
-                <td className="num">{formatEstimate(d.poverty_decrease, 'poverty_decrease')}</td>
-                <td className="num">{formatEstimate(d.smartphone_households, 'smartphone_households')}</td>
-                <td className="strand-cell">
+                <td className="num" data-label="Poverty">
+                  {formatEstimate(d.poverty_rate, 'poverty_rate')}
+                </td>
+                <td className="num small opt-md" data-label="95% CI">
+                  {formatCi(d.poverty_rate)}
+                </td>
+                <td className="num" data-label="Excluded">
+                  {formatEstimate(d.excluded, 'excluded')}
+                </td>
+                <td className="num opt-md" data-label="Not formally served">
+                  {formatEstimate(d.not_formally_served, 'not_formally_served')}
+                </td>
+                <td className="num" data-label="Banked">
+                  {formatEstimate(d.banked, 'banked')}
+                </td>
+                <td className="num opt-md" data-label="Poverty fall since 2017">
+                  {formatEstimate(d.poverty_decrease, 'poverty_decrease')}
+                </td>
+                <td className="num opt-lg" data-label="Smartphone">
+                  {formatEstimate(d.smartphone_households, 'smartphone_households')}
+                </td>
+                <td className="strand-cell opt-xl">
                   <StrandBar strand={d.access_strand} compact />
                 </td>
-                <td>
+                <td className="profile-cell">
                   <span className={`profile-dot profile-${d.profile.type}`} aria-hidden="true" /> {d.profile.label}
                   <span className="def">
                     {d.profile.flags.map((f) => (

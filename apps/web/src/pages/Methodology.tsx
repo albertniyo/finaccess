@@ -106,7 +106,7 @@ export function Methodology() {
 
           <h2>Exclusion-pattern typology</h2>
           <div className="table-scroll">
-          <table className="data-table">
+          <table className="data-table stack">
             <thead>
               <tr>
                 <th scope="col">Profile</th>
@@ -120,8 +120,10 @@ export function Methodology() {
                   <th scope="row">
                     <span className={`profile-dot profile-${k}`} aria-hidden="true" /> {t.label}
                   </th>
-                  <td>{t.rule}</td>
-                  <td className="small">{t.response_focus}</td>
+                  <td data-label="Rule">{t.rule}</td>
+                  <td className="small" data-label="Where to look next">
+                    {t.response_focus}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -163,11 +165,13 @@ export function Methodology() {
             })}
           </dl>
           <div className="table-scroll">
-            <table className="data-table">
+            <table className="data-table stack">
               <thead>
                 <tr>
                   <th scope="col">Check</th>
-                  <th scope="col">Type</th>
+                  <th scope="col" className="opt-md">
+                    Type
+                  </th>
                   <th scope="col">Published / expected</th>
                   <th scope="col">Ours</th>
                   <th scope="col">Result</th>
@@ -178,11 +182,19 @@ export function Methodology() {
                 {validation.data.checks.map((c) => (
                   <tr key={c.check}>
                     <th scope="row">{c.check}</th>
-                    <td className="small">{c.group}</td>
-                    <td className="val">{Array.isArray(c.expected) ? c.expected.join(', ') : String(c.expected)}</td>
-                    <td className="val">{Array.isArray(c.observed) ? c.observed.join(', ') : String(c.observed)}</td>
-                    <td className={`nowrap ${c.pass ? 'pass' : 'fail'}`}>{c.pass ? '✓ pass' : '✗ fail'}</td>
-                    <td className="small">{c.reference}</td>
+                    <td className="small opt-md" data-label="Type">
+                      {c.group}
+                    </td>
+                    <td className="val" data-label="Published / expected">
+                      {Array.isArray(c.expected) ? c.expected.join(', ') : String(c.expected)}
+                    </td>
+                    <td className="val" data-label="Ours">
+                      {Array.isArray(c.observed) ? c.observed.join(', ') : String(c.observed)}
+                    </td>
+                    <td className={`nowrap ${c.pass ? 'pass' : 'fail'}`} data-label="Result">{c.pass ? '✓ pass' : '✗ fail'}</td>
+                    <td className="small" data-label="Reference">
+                      {c.reference}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -204,7 +216,7 @@ export function Methodology() {
         What is demonstrated now versus what a pilot would measure. Pilot rows are goals, not achieved outcomes.
       </p>
       <div className="table-scroll">
-      <table className="data-table">
+      <table className="data-table stack">
         <thead>
           <tr>
             <th scope="col">Measure</th>
@@ -216,8 +228,8 @@ export function Methodology() {
           {IMPACT.map(([m, how, status]) => (
             <tr key={m}>
               <th scope="row">{m}</th>
-              <td>{how}</td>
-              <td>
+              <td data-label="How">{how}</td>
+              <td data-label="Status">
                 <span className={`status-pill ${status === 'Pilot goal' ? 'goal' : 'done'}`}>{status}</span>
               </td>
             </tr>

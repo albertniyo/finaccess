@@ -105,7 +105,7 @@ function Results({ data, highlight }: { data: PrioritiesResponse; highlight: str
         in the top 5.
       </p>
       <div className="table-scroll">
-        <table className="data-table rank-table">
+        <table className="data-table rank-table stack">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -118,15 +118,19 @@ function Results({ data, highlight }: { data: PrioritiesResponse; highlight: str
               <th scope="col">Poverty</th>
               <th scope="col">Exclusion</th>
               <th scope="col" title="Share of simulations in which the district is in the top 5">In top 5</th>
-              <th scope="col" title="5th–95th percentile of simulated rank">Rank range (90%)</th>
-              <th scope="col" title="Poverty weights at which the district is in the top 5">Top-5 at poverty weight</th>
+              <th scope="col" className="opt-md" title="5th–95th percentile of simulated rank">
+                Rank range (90%)
+              </th>
+              <th scope="col" className="opt-lg" title="Poverty weights at which the district is in the top 5">
+                Top-5 at poverty weight
+              </th>
               <th scope="col">Brief</th>
             </tr>
           </thead>
           <tbody>
             {data.rankings.map((r) => (
               <tr key={r.district} className={r.district === highlight ? 'selected' : undefined}>
-                <td>
+                <td className="rank-cell">
                   <span className={`rank-pill${r.rank <= 5 ? ' top' : ''}`}>{r.rank}</span>
                 </td>
                 <th scope="row">
@@ -135,25 +139,33 @@ function Results({ data, highlight }: { data: PrioritiesResponse; highlight: str
                     <span className={`profile-dot profile-${r.profile.type}`} aria-hidden="true" /> {r.profile.label}
                   </span>
                 </th>
-                <td className="contrib-cell">
+                <td className="contrib-cell" data-label="Score">
                   <ContributionBar r={r} />
                 </td>
-                <td className="num">{r.baseline_rank}</td>
-                <td className="num">
+                <td className="num" data-label="Poverty-only rank">
+                  {r.baseline_rank}
+                </td>
+                <td className="num" data-label="Shift">
                   <Shift value={r.rank_shift} />
                 </td>
-                <td className="num">{r.inputs.poverty_rate.toFixed(1)}%</td>
-                <td className="num">{r.inputs.exclusion}%</td>
-                <td className="num">{share(r.uncertainty.p_top5)}</td>
-                <td className="num">
+                <td className="num" data-label="Poverty">
+                  {r.inputs.poverty_rate.toFixed(1)}%
+                </td>
+                <td className="num" data-label="Exclusion">
+                  {r.inputs.exclusion}%
+                </td>
+                <td className="num" data-label="In top 5">
+                  {share(r.uncertainty.p_top5)}
+                </td>
+                <td className="num opt-md" data-label="Rank range (90%)">
                   {r.uncertainty.rank_interval_90[0]}–{r.uncertainty.rank_interval_90[1]}
                 </td>
-                <td className="num small">
+                <td className="num small opt-lg" data-label="Top 5 at poverty weight">
                   {r.top5_poverty_weight_range
                     ? `${r.top5_poverty_weight_range[0].toFixed(2)}–${r.top5_poverty_weight_range[1].toFixed(2)}`
                     : 'never'}
                 </td>
-                <td>
+                <td className="action-cell">
                   <Link
                     className="row-action"
                     to={`/brief${analysisQuery(pw, m, r.district)}`}
@@ -171,7 +183,7 @@ function Results({ data, highlight }: { data: PrioritiesResponse; highlight: str
       <h2>What would change this recommendation?</h2>
       <p className="small muted">Top 5 under alternative weightings and an alternative exclusion definition.</p>
       <div className="table-scroll">
-        <table className="data-table sens-table">
+        <table className="data-table sens-table stack">
           <thead>
             <tr>
               <th scope="col">District</th>
@@ -187,7 +199,11 @@ function Results({ data, highlight }: { data: PrioritiesResponse; highlight: str
               <tr key={name}>
                 <th scope="row">{name}</th>
                 {schemes.map((s) => (
-                  <td key={s.label} className="sens-cell">
+                  <td
+                    key={s.label}
+                    className={`sens-cell${s.top5.includes(name) ? '' : ' out'}`}
+                    data-label={s.label}
+                  >
                     {s.top5.includes(name) ? (
                       <span className="in-top" aria-label="in top 5">
                         #{s.top5.indexOf(name) + 1}

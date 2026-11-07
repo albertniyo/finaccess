@@ -57,12 +57,6 @@ export const BookIcon = (p: IconProps) => (
   </Icon>
 )
 
-export const CheckIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="m5 12.5 4.5 4.5L19 7.5" />
-  </Icon>
-)
-
 export const AlertIcon = (p: IconProps) => (
   <Icon {...p}>
     <path d="M12 3 2.5 20h19z" />

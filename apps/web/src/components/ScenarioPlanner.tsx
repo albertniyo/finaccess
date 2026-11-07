@@ -102,7 +102,7 @@ export function ScenarioPlanner({ povertyWeight, measure }: { povertyWeight: num
             <Badge kind="scenario" /> {result.provenance.warning}
           </p>
           <div className="table-scroll">
-            <table className="data-table">
+            <table className="data-table stack">
               <caption className="small muted">
                 {result.strategy_label} · top {result.top_n} · {result.allocation_label.toLowerCase()}
               </caption>
@@ -120,11 +120,21 @@ export function ScenarioPlanner({ povertyWeight, measure }: { povertyWeight: num
                 {result.allocations.map((a) => (
                   <tr key={a.district}>
                     <th scope="row">{a.district}</th>
-                    <td className="num">{share(a.share)}</td>
-                    <td className="num">{rwf(a.amount)}</td>
-                    <td className="num">{a.poverty_rate.toFixed(1)}%</td>
-                    <td className="num">{a.exclusion}%</td>
-                    <td className="small">{a.profile}</td>
+                    <td className="num" data-label="Share">
+                      {share(a.share)}
+                    </td>
+                    <td className="num" data-label="Amount">
+                      {rwf(a.amount)}
+                    </td>
+                    <td className="num" data-label="Poverty">
+                      {a.poverty_rate.toFixed(1)}%
+                    </td>
+                    <td className="num" data-label="Exclusion">
+                      {a.exclusion}%
+                    </td>
+                    <td className="small" data-label="Profile">
+                      {a.profile}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -132,7 +142,7 @@ export function ScenarioPlanner({ povertyWeight, measure }: { povertyWeight: num
           </div>
           <h3>Same budget, three rules</h3>
           <div className="table-scroll">
-            <table className="data-table">
+            <table className="data-table stack">
               <thead>
                 <tr>
                   <th scope="col">Rule</th>
@@ -147,13 +157,21 @@ export function ScenarioPlanner({ povertyWeight, measure }: { povertyWeight: num
                 {result.comparison.map((c) => (
                   <tr key={c.strategy} className={c.strategy === result.strategy ? 'selected' : undefined}>
                     <th scope="row">{STRATEGY_LABELS[c.strategy]}</th>
-                    <td className="num">{share(c.budget_share_above_national_poverty)}</td>
-                    <td className="num">{share(c.budget_share_above_national_exclusion)}</td>
-                    <td className="num">{share(c.budget_share_access_gap_districts)}</td>
-                    <td className="num">
+                    <td className="num" data-label="To above-national poverty">
+                      {share(c.budget_share_above_national_poverty)}
+                    </td>
+                    <td className="num" data-label="To above-national exclusion">
+                      {share(c.budget_share_above_national_exclusion)}
+                    </td>
+                    <td className="num" data-label="To exclusion-gap districts">
+                      {share(c.budget_share_access_gap_districts)}
+                    </td>
+                    <td className="num" data-label="Shared with selected rule">
                       {c.overlap_with_selected}/{result.top_n}
                     </td>
-                    <td className="small">{c.only_in_this_strategy.join(', ') || '—'}</td>
+                    <td className="small" data-label="Only this rule funds">
+                      {c.only_in_this_strategy.join(', ') || '—'}
+                    </td>
                   </tr>
                 ))}
               </tbody>

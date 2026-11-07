@@ -59,12 +59,11 @@ export function EvidencePanel({ data, district, povertyWeight, measure, onClose 
       <h3>Financial access strand</h3>
       <StrandBar strand={row.access_strand} />
 
-      <table className="evidence-table">
+      <table className="evidence-table stack">
         <thead>
           <tr>
             <th scope="col">Indicator</th>
             <th scope="col">District</th>
-            <th scope="col">95% interval</th>
             <th scope="col">Province</th>
             <th scope="col">Rwanda</th>
           </tr>
@@ -72,7 +71,7 @@ export function EvidencePanel({ data, district, povertyWeight, measure, onClose 
         {(['core', 'context'] as const).map((group) => (
           <tbody key={group}>
             <tr className="ind-group">
-              <th scope="colgroup" colSpan={5}>
+              <th scope="colgroup" colSpan={4}>
                 {GROUP_TITLES[group]} <Badge kind="observed" />
               </th>
             </tr>
@@ -84,10 +83,18 @@ export function EvidencePanel({ data, district, povertyWeight, measure, onClose 
                     {ind.label}
                     <span className="def">{shortSource(ind)}</span>
                   </th>
-                  <td className="num">{formatEstimate(row[ind.id], ind.id)}</td>
-                  <td className="num small">{formatCi(row[ind.id])}</td>
-                  <td className="num">{province ? formatEstimate(province[ind.id], ind.id) : '—'}</td>
-                  <td className="num">{formatEstimate(data.national[ind.id], ind.id)}</td>
+                  <td className="num" data-label={row.district}>
+                    <span className="val-stack">
+                      <strong>{formatEstimate(row[ind.id], ind.id)}</strong>
+                      <span className="def">{formatCi(row[ind.id])}</span>
+                    </span>
+                  </td>
+                  <td className="num" data-label={row.province}>
+                    {province ? formatEstimate(province[ind.id], ind.id) : '—'}
+                  </td>
+                  <td className="num" data-label="Rwanda">
+                    {formatEstimate(data.national[ind.id], ind.id)}
+                  </td>
                 </tr>
               ))}
           </tbody>
