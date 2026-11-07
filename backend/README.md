@@ -1,45 +1,46 @@
-# FinAccess Compass — Backend
+# FinAccess Compass — API
 
-FastAPI API + pure-Python `compass` analytics for FinAccess Compass Rwanda.
-
-Managed with **[uv](https://docs.astral.sh/uv/)**.
-
-## Setup
+FastAPI service exposing the `compass` analytics package. Dependencies are managed with
+[uv](https://docs.astral.sh/uv/).
 
 ```bash
-cd backend
 uv sync
-```
-
-## Run
-
-```bash
-uv run uvicorn app.main:app --reload --port 8000
-```
-
-API docs: http://localhost:8000/docs
-
-## Tests
-
-```bash
+uv run uvicorn app.main:app --reload    # http://localhost:8000/docs
 uv run pytest
+uv run ruff check . ../scripts
 ```
 
-## Docker / Render
+Processed data is read from `../data/processed`, or from `COMPASS_DATA_DIR` when set. Rebuild it with
+`../scripts/build_data.sh`.
+
+## Docker
+
+Build from the repository root so the image includes `data/processed`:
 
 ```bash
-cd backend
-docker build -t finaccess-api .
-docker run --rm -p 8000:8000 -e PORT=8000 finaccess-api
+docker build -f backend/Dockerfile -t finaccess-api .
+docker run -d -p 8000:8000 --restart unless-stopped finaccess-api
 ```
 
-On [Render](https://render.com): create a **Web Service** with Docker, Root Directory `backend`, and health check path `/health`. Render sets `PORT` automatically.
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `PORT` | `8000` | Listen port |
+| `WEB_CONCURRENCY` | `2` | Uvicorn worker processes |
+| `CORS_ORIGINS` | — | Extra allowed origins, comma-separated |
+| `CORS_ORIGIN_REGEX` | `https://finaccessrw(-[a-z0-9-]+)?\.vercel\.app` | Allowed origin pattern |
+| `COMPASS_DATA_DIR` | `/app/data/processed` | Directory containing `districts.json` |
 
 ## Layout
 
-| Path | Role |
+| Path | Contents |
 | --- | --- |
-| `app/` | FastAPI routes → JSON |
-| `compass/` | Scoring, baselines, briefs (calculation logic) |
-| `native/` | Optional C extensions for profiled hot paths |
-| `tests/` | Unit + API contract tests |
+| `app/` | Routes, CORS, headers, error handling |
+| `compass/data.py` | Loading processed aggregates |
+| `compass/indicators.py` | Indicator catalogue and Explorer payload |
+| `compass/scoring.py` | Weighted score, baseline, Monte Carlo uncertainty, sensitivity |
+| `compass/uncertainty.py` | FinScope standard-error approximation |
+| `compass/typology.py` | District profiles and flags |
+| `compass/scenarios.py` | Budget scenarios |
+| `compass/briefs.py` | Policy briefs |
+| `native/` | Reserved for C extensions; not needed (see its README) |
+| `tests/` | Data, scoring and API tests |
