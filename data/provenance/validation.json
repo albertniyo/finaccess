@@ -1,0 +1,494 @@
+{
+  "passed": 50,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "Poverty headcount \u2014 Rwanda",
+      "group": "golden",
+      "expected": 27.4,
+      "observed": 27.36,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Urban",
+      "group": "golden",
+      "expected": 16.7,
+      "observed": 16.69,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Rural",
+      "group": "golden",
+      "expected": 31.6,
+      "observed": 31.58,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Western",
+      "group": "golden",
+      "expected": 37.4,
+      "observed": 37.41,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Southern",
+      "group": "golden",
+      "expected": 34.7,
+      "observed": 34.67,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Eastern",
+      "group": "golden",
+      "expected": 26.8,
+      "observed": 26.78,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Northern",
+      "group": "golden",
+      "expected": 20.2,
+      "observed": 20.15,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 City of Kigali",
+      "group": "golden",
+      "expected": 9.1,
+      "observed": 9.05,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Nyamagabe",
+      "group": "golden",
+      "expected": 51.4,
+      "observed": 51.39,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Gisagara",
+      "group": "golden",
+      "expected": 45.6,
+      "observed": 45.59,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Rusizi",
+      "group": "golden",
+      "expected": 44.2,
+      "observed": 44.16,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Nyanza",
+      "group": "golden",
+      "expected": 43.3,
+      "observed": 43.27,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Nyamasheke",
+      "group": "golden",
+      "expected": 42.7,
+      "observed": 42.67,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Nyarugenge",
+      "group": "golden",
+      "expected": 6.8,
+      "observed": 6.8,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Kicukiro",
+      "group": "golden",
+      "expected": 6.9,
+      "observed": 6.93,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Poverty headcount \u2014 Gasabo",
+      "group": "golden",
+      "expected": 11.1,
+      "observed": 11.06,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report text / Poverty Profile Annex B"
+    },
+    {
+      "check": "Extreme poverty \u2014 Rwanda",
+      "group": "golden",
+      "expected": 5.4,
+      "observed": 5.43,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report"
+    },
+    {
+      "check": "health_insurance \u2014 Rwanda",
+      "group": "golden",
+      "expected": 85.3,
+      "observed": 85.31,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report, key findings: 'Health insurance coverage expanded to 85.3%'"
+    },
+    {
+      "check": "internet_households \u2014 Rwanda",
+      "group": "golden",
+      "expected": 29.8,
+      "observed": 29.82,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report, key indicators table row 26 (29.8)"
+    },
+    {
+      "check": "smartphone_households \u2014 Rwanda",
+      "group": "golden",
+      "expected": 34.0,
+      "observed": 34.35,
+      "tolerance": 0.5,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report summary: 'smartphones (34%)'"
+    },
+    {
+      "check": "mobile_phone_households \u2014 Rwanda",
+      "group": "golden",
+      "expected": 85.0,
+      "observed": 84.6,
+      "tolerance": 0.5,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report summary: 'mobile phones (85% vs 67%)' \u2014 EICV7 vs EICV5"
+    },
+    {
+      "check": "internet_households \u2014 Urban",
+      "group": "golden",
+      "expected": 57.0,
+      "observed": 56.64,
+      "tolerance": 0.5,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report summary: 'In urban areas, 57% of the households'"
+    },
+    {
+      "check": "internet_households \u2014 Rural",
+      "group": "golden",
+      "expected": 19.0,
+      "observed": 18.7,
+      "tolerance": 0.5,
+      "pass": true,
+      "reference": "EICV7 Main Indicators Report summary: 'compared to 19% in rural areas'"
+    },
+    {
+      "check": "Table A9.23: 30 districts, every estimate inside its 95% CI",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Excel sheet 'Table A9.23'"
+    },
+    {
+      "check": "Table A5.18: 30 districts, every estimate inside its 95% CI",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Excel sheet 'Table A5.18'"
+    },
+    {
+      "check": "Table A5.19: 30 districts, every estimate inside its 95% CI",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Excel sheet 'Table A5.19'"
+    },
+    {
+      "check": "Table A5.15: 30 districts, every estimate inside its 95% CI",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Excel sheet 'Table A5.15'"
+    },
+    {
+      "check": "Table A3.7: 30 districts, every estimate inside its 95% CI",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Excel sheet 'Table A3.7'"
+    },
+    {
+      "check": "FinScope financially included \u2014 Rwanda",
+      "group": "golden",
+      "expected": 96,
+      "observed": 96,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 \u00a72.1"
+    },
+    {
+      "check": "FinScope formally served \u2014 Rwanda",
+      "group": "golden",
+      "expected": 92,
+      "observed": 92,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 \u00a72.1"
+    },
+    {
+      "check": "FinScope banked \u2014 Rwanda",
+      "group": "golden",
+      "expected": 22,
+      "observed": 22,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 \u00a72.3"
+    },
+    {
+      "check": "Districts with exclusion above national 4%",
+      "group": "golden",
+      "expected": 12,
+      "observed": 12,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.30: 'Twelve districts have higher levels of financial exclusion'"
+    },
+    {
+      "check": "Highest informal-only reliance",
+      "group": "golden",
+      "expected": "Gicumbi",
+      "observed": "Gicumbi",
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.30"
+    },
+    {
+      "check": "All access strands (district + group) sum to 98\u2013101",
+      "group": "consistency",
+      "expected": "98\u2013101",
+      "observed": [
+        99,
+        100,
+        101
+      ],
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Rounded figure labels"
+    },
+    {
+      "check": "FinScope included \u2014 Urban",
+      "group": "golden",
+      "expected": 97,
+      "observed": 97,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.27: '97% of the urban population'"
+    },
+    {
+      "check": "FinScope included \u2014 Rural",
+      "group": "golden",
+      "expected": 96,
+      "observed": 96,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.27: 'About 96% of the rural populace'"
+    },
+    {
+      "check": "FinScope included \u2014 Male",
+      "group": "golden",
+      "expected": 97,
+      "observed": 97,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.28: '97% of males'"
+    },
+    {
+      "check": "FinScope included \u2014 Female",
+      "group": "golden",
+      "expected": 96,
+      "observed": 96,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.28: '96% of females are financially included'"
+    },
+    {
+      "check": "FinScope included \u2014 Adults with disabilities",
+      "group": "golden",
+      "expected": 93,
+      "observed": 93,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.29: 'About 93% of people with disabilities'"
+    },
+    {
+      "check": "FinScope formally served \u2014 Male",
+      "group": "golden",
+      "expected": 94,
+      "observed": 94,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.28: 'formally served males (94%)'"
+    },
+    {
+      "check": "FinScope formally served \u2014 Female",
+      "group": "golden",
+      "expected": 90,
+      "observed": 90,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.28: 'versus females (90%)'"
+    },
+    {
+      "check": "FinScope refugees banked",
+      "group": "golden",
+      "expected": 37,
+      "observed": 37,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.29: '37% of refugees have bank accounts'"
+    },
+    {
+      "check": "Group file national strand equals district file national strand",
+      "group": "consistency",
+      "expected": [
+        22,
+        70,
+        4,
+        4
+      ],
+      "observed": [
+        22,
+        70,
+        4,
+        4
+      ],
+      "tolerance": 0,
+      "pass": true,
+      "reference": "Figure 5 vs Figure 10 'Total Population'"
+    },
+    {
+      "check": "Bank account uptake equals banked strand",
+      "group": "consistency",
+      "expected": 22,
+      "observed": 22,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "FinScope 2024 p.12 vs Figure 5"
+    },
+    {
+      "check": "Poverty 2017 (modelled) \u2014 Rwanda, Annex B vs Table 5.1",
+      "group": "golden",
+      "expected": 39.8,
+      "observed": 39.8,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Poverty Profile Annex B ('Rwanda 39.8') vs Excel Table 5.1"
+    },
+    {
+      "check": "Poverty decrease 2017\u20132024 \u2014 Rwanda",
+      "group": "consistency",
+      "expected": 12.4,
+      "observed": 12.4,
+      "tolerance": 0.06,
+      "pass": true,
+      "reference": "EICV7 Poverty Profile Annex B ('12.4') vs Excel Table 5.1"
+    },
+    {
+      "check": "Annex B: decrease = 2017 \u2212 2024 (\u00b10.15 rounding) for all 30 districts",
+      "group": "consistency",
+      "expected": 30,
+      "observed": 30,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "EICV7 Poverty Profile Annex B"
+    },
+    {
+      "check": "Annex B 2024 column vs Excel Table A9.23: only documented differences",
+      "group": "consistency",
+      "expected": [
+        "Burera",
+        "Nyabihu",
+        "Nyamasheke",
+        "Rwamagana"
+      ],
+      "observed": [
+        "Burera",
+        "Nyabihu",
+        "Nyamasheke",
+        "Rwamagana"
+      ],
+      "tolerance": 0,
+      "pass": true,
+      "reference": "EICV7 Poverty Profile Annex B vs Main Indicator tables A9.23"
+    },
+    {
+      "check": "VUP beneficiaries (thousands)",
+      "group": "consistency",
+      "expected": 410.4,
+      "observed": 410.4,
+      "tolerance": 0.1,
+      "pass": true,
+      "reference": "EICV7 Table 10.1"
+    },
+    {
+      "check": "Hand transcriptions match PDF text layer (scripts/verify_transcriptions.py)",
+      "group": "transcription",
+      "expected": 90,
+      "observed": 90,
+      "tolerance": 0,
+      "pass": true,
+      "reference": "data/provenance/transcription_check.json"
+    }
+  ],
+  "known_discrepancies": [
+    {
+      "item": "Gisagara headcount poverty",
+      "detail": "EICV7 Main Indicators Report narrative (\u00a79) quotes 46.6%; the report's own district figure, Poverty Profile Annex B and Excel Table A9.23 all give 45.6%. We use 45.6%."
+    },
+    {
+      "item": "Annex B vs Table A9.23 (2024 poverty)",
+      "detail": "Poverty Profile Annex B prints Burera 22.0 (Excel 21.8), Nyabihu 20.2 (Excel 20.4), Nyamasheke 42.8 (Excel 42.7) and Rwamagana 23.8 (Excel 23.9). We use the Excel values for 2024 and Annex B only for the 2017 modelled values and the printed decrease."
+    },
+    {
+      "item": "2017 district poverty is modelled",
+      "detail": "EICV5 (2017) district rates in Annex B are NISR model predictions on the EICV7 consumption basis, not EICV5 published rates; province CIs (Table 5.1) are model-dependent."
+    }
+  ]
+}

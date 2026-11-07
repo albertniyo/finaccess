@@ -1,0 +1,2685 @@
+{
+  "meta": {
+    "generated_by": "scripts/build_indicators.py",
+    "geo_level": "district",
+    "n_districts": 30,
+    "inputs": [
+      {
+        "path": "data/raw/eicv7/EICV7_Tables_MainIndicatorReport.xlsx",
+        "sha256": "8a01ec05d851d9813a855e513eb0e74046a070ca0235df9e81730560028e350d"
+      },
+      {
+        "path": "data/raw/eicv7/EICV7_Tables_Rwanda_Poverty_Profile.xlsx",
+        "sha256": "7b47093b7cf7315784a7fe61d9aa912feeafbfeb8f2372b012b7d8b63b5ec142"
+      },
+      {
+        "path": "data/manual/finscope2024_access_strand.csv",
+        "sha256": "0a9f77f09daf3bd767c745021bdb496b17b99941acf8603794c678fd2feb9236"
+      },
+      {
+        "path": "data/manual/finscope2024_access_strand_groups.csv",
+        "sha256": "ffd5597aafcd50029967f0f414a2bf6c52538152901001e62820381eeb8fd27e"
+      },
+      {
+        "path": "data/manual/finscope2024_products.csv",
+        "sha256": "460142a4cb85db53084314ce486d478b301808f472f72757a16692db2993b249"
+      },
+      {
+        "path": "data/manual/eicv7_poverty_profile_annex_b.csv",
+        "sha256": "b01e1d91179d1bed8739690919010250b6211caac230956616c025a1215ef9c6"
+      },
+      {
+        "path": "data/raw/geo/geoBoundaries-RWA-ADM2_simplified.geojson",
+        "sha256": "56b0995c7a7735847659b766e00c5cfa29b1b3a197f231dc396f399948c46c09"
+      }
+    ],
+    "references": {
+      "poverty_rate": "EICV7 Main Indicator Report tables, Table A9.23",
+      "mobile_phone_households": "EICV7 Main Indicator Report tables, Table A5.18",
+      "smartphone_households": "EICV7 Main Indicator Report tables, Table A5.19",
+      "internet_households": "EICV7 Main Indicator Report tables, Table A5.15",
+      "health_insurance": "EICV7 Main Indicator Report tables, Table A3.7",
+      "extreme_poverty_rate": "EICV7 Main Indicator Report tables, Table 9.2",
+      "poverty_trend": "EICV7 Poverty Profile, Annex B (district, PDF) and Table 5.1 (province/national, Excel)",
+      "finscope": "FinScope Rwanda 2024 Report (AFR/NISR), Figure 13 (district access strand), Figure 12 (province), Figure 5 (national); transcribed from figure labels",
+      "finscope_groups": "FinScope Rwanda 2024 Report, Figures 5\u201311 (access strand by group)",
+      "finscope_products": "FinScope Rwanda 2024 Report, p.12 (accounts in own name)",
+      "vup": "EICV7 Main Indicator Report tables, Tables 10.1, 10.2, 10.4 (EICV7 cross-section + VUP survey)"
+    },
+    "units": "percent",
+    "eicv7": {
+      "survey": "EICV7 2023/24",
+      "population": "Individuals (poverty, health insurance); households (phones, internet)",
+      "design": "Stratified two-stage sample; estimates carry published SE and 95% CI"
+    },
+    "finscope": {
+      "survey": "FinScope Rwanda 2024",
+      "population": "Adults aged 16+",
+      "design": "Stratified three-stage cluster sample, ~400\u2013440 adults in most districts",
+      "precision": "Published as whole percentages without standard errors"
+    },
+    "known_discrepancies": [
+      {
+        "item": "Gisagara headcount poverty",
+        "detail": "EICV7 Main Indicators Report narrative (\u00a79) quotes 46.6%; the report's own district figure, Poverty Profile Annex B and Excel Table A9.23 all give 45.6%. We use 45.6%."
+      },
+      {
+        "item": "Annex B vs Table A9.23 (2024 poverty)",
+        "detail": "Poverty Profile Annex B prints Burera 22.0 (Excel 21.8), Nyabihu 20.2 (Excel 20.4), Nyamasheke 42.8 (Excel 42.7) and Rwamagana 23.8 (Excel 23.9). We use the Excel values for 2024 and Annex B only for the 2017 modelled values and the printed decrease."
+      },
+      {
+        "item": "2017 district poverty is modelled",
+        "detail": "EICV5 (2017) district rates in Annex B are NISR model predictions on the EICV7 consumption basis, not EICV5 published rates; province CIs (Table 5.1) are model-dependent."
+      }
+    ],
+    "transcription_check": {
+      "passed": 90,
+      "failed": 0
+    }
+  },
+  "national": {
+    "poverty_rate": {
+      "value": 27.36,
+      "se": 0.496,
+      "ci_low": 26.39,
+      "ci_high": 28.34,
+      "cv": 1.81,
+      "deff": 1.865
+    },
+    "mobile_phone_households": {
+      "value": 84.6,
+      "se": 0.323,
+      "ci_low": 83.96,
+      "ci_high": 85.23,
+      "cv": 0.38,
+      "deff": 1.204
+    },
+    "smartphone_households": {
+      "value": 34.35,
+      "se": 0.488,
+      "ci_low": 33.39,
+      "ci_high": 35.31,
+      "cv": 1.42,
+      "deff": 1.592
+    },
+    "internet_households": {
+      "value": 29.82,
+      "se": 0.478,
+      "ci_low": 28.88,
+      "ci_high": 30.75,
+      "cv": 1.6,
+      "deff": 1.642
+    },
+    "health_insurance": {
+      "value": 85.31,
+      "se": 0.363,
+      "ci_low": 84.6,
+      "ci_high": 86.02,
+      "cv": 0.43,
+      "deff": 6.531
+    },
+    "extreme_poverty_rate": {
+      "value": 5.43,
+      "se": 0.266,
+      "ci_low": 4.91,
+      "ci_high": 5.95,
+      "cv": 4.89,
+      "deff": 2.068
+    },
+    "urban_poverty_rate": {
+      "value": 16.69,
+      "se": 0.905,
+      "ci_low": 14.92,
+      "ci_high": 18.47,
+      "cv": 5.42,
+      "deff": 2.516
+    },
+    "rural_poverty_rate": {
+      "value": 31.58,
+      "se": 0.592,
+      "ci_low": 30.42,
+      "ci_high": 32.75,
+      "cv": 1.87,
+      "deff": 1.749
+    },
+    "by_area": {
+      "poverty_rate": {
+        "Urban": {
+          "value": 16.69,
+          "se": 0.905,
+          "ci_low": 14.92,
+          "ci_high": 18.47,
+          "cv": 5.42,
+          "deff": 2.516
+        },
+        "Rural": {
+          "value": 31.58,
+          "se": 0.592,
+          "ci_low": 30.42,
+          "ci_high": 32.75,
+          "cv": 1.87,
+          "deff": 1.749
+        }
+      },
+      "mobile_phone_households": {
+        "Urban": {
+          "value": 94.13,
+          "se": 0.442,
+          "ci_low": 93.27,
+          "ci_high": 95.0,
+          "cv": 0.47,
+          "deff": 1.562
+        },
+        "Rural": {
+          "value": 80.64,
+          "se": 0.417,
+          "ci_low": 79.83,
+          "ci_high": 81.46,
+          "cv": 0.52,
+          "deff": 1.188
+        }
+      },
+      "smartphone_households": {
+        "Urban": {
+          "value": 61.92,
+          "se": 1.134,
+          "ci_low": 59.69,
+          "ci_high": 64.14,
+          "cv": 1.83,
+          "deff": 2.405
+        },
+        "Rural": {
+          "value": 22.93,
+          "se": 0.516,
+          "ci_low": 21.91,
+          "ci_high": 23.94,
+          "cv": 2.25,
+          "deff": 1.605
+        }
+      },
+      "internet_households": {
+        "Urban": {
+          "value": 56.64,
+          "se": 1.19,
+          "ci_low": 54.3,
+          "ci_high": 58.97,
+          "cv": 2.1,
+          "deff": 2.542
+        },
+        "Rural": {
+          "value": 18.7,
+          "se": 0.472,
+          "ci_low": 17.78,
+          "ci_high": 19.63,
+          "cv": 2.52,
+          "deff": 1.559
+        }
+      },
+      "health_insurance": {
+        "Urban": {
+          "value": 85.08,
+          "se": 0.731,
+          "ci_low": 83.64,
+          "ci_high": 86.51,
+          "cv": 0.86,
+          "deff": 7.409
+        },
+        "Rural": {
+          "value": 85.4,
+          "se": 0.416,
+          "ci_low": 84.59,
+          "ci_high": 86.22,
+          "cv": 0.49,
+          "deff": 6.176
+        }
+      }
+    },
+    "poverty_trend": {
+      "poverty_2017_modelled": 39.8,
+      "decrease_pp": 12.4
+    },
+    "finscope": {
+      "banked": 22,
+      "other_formal": 70,
+      "informal_only": 4,
+      "excluded": 4,
+      "formally_served": 92,
+      "not_formally_served": 8,
+      "strand_sum": 100,
+      "source_figure": "Figure 5 (p.27)",
+      "transcription_note": "Text labels; matches report narrative (96% included / 92% formal / 4% excluded)"
+    },
+    "finscope_groups": [
+      {
+        "dimension": "national",
+        "group": "All adults",
+        "year": 2020,
+        "banked": 22,
+        "other_formal": 55,
+        "informal_only": 16,
+        "excluded": 7,
+        "formally_served": 77,
+        "not_formally_served": 23,
+        "strand_sum": 100,
+        "source_figure": "Figure 5 (p.27)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "national",
+        "group": "All adults",
+        "year": 2024,
+        "banked": 22,
+        "other_formal": 70,
+        "informal_only": 4,
+        "excluded": 4,
+        "formally_served": 92,
+        "not_formally_served": 8,
+        "strand_sum": 100,
+        "source_figure": "Figure 5 (p.27)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "area",
+        "group": "Rural",
+        "year": 2024,
+        "banked": 14,
+        "other_formal": 76,
+        "informal_only": 6,
+        "excluded": 4,
+        "formally_served": 90,
+        "not_formally_served": 10,
+        "strand_sum": 100,
+        "source_figure": "Figure 6 (p.28)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "area",
+        "group": "Urban",
+        "year": 2024,
+        "banked": 39,
+        "other_formal": 56,
+        "informal_only": 2,
+        "excluded": 3,
+        "formally_served": 95,
+        "not_formally_served": 5,
+        "strand_sum": 100,
+        "source_figure": "Figure 6 (p.28)",
+        "transcription_note": "Merged label \"23\" read visually at 300 dpi as informal 2 / excluded 3; report text: 97% of urban adults included"
+      },
+      {
+        "dimension": "gender",
+        "group": "Male",
+        "year": 2024,
+        "banked": 27,
+        "other_formal": 67,
+        "informal_only": 3,
+        "excluded": 3,
+        "formally_served": 94,
+        "not_formally_served": 6,
+        "strand_sum": 100,
+        "source_figure": "Figure 7 (p.28)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "gender",
+        "group": "Female",
+        "year": 2024,
+        "banked": 17,
+        "other_formal": 73,
+        "informal_only": 6,
+        "excluded": 4,
+        "formally_served": 90,
+        "not_formally_served": 10,
+        "strand_sum": 100,
+        "source_figure": "Figure 7 (p.28)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "age",
+        "group": "16-17",
+        "year": 2024,
+        "banked": 12,
+        "other_formal": 64,
+        "informal_only": 8,
+        "excluded": 16,
+        "formally_served": 76,
+        "not_formally_served": 24,
+        "strand_sum": 100,
+        "source_figure": "Figure 8 (p.29)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "age",
+        "group": "18-30",
+        "year": 2024,
+        "banked": 20,
+        "other_formal": 73,
+        "informal_only": 4,
+        "excluded": 4,
+        "formally_served": 93,
+        "not_formally_served": 8,
+        "strand_sum": 101,
+        "source_figure": "Figure 8 (p.29)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "age",
+        "group": "31-60",
+        "year": 2024,
+        "banked": 26,
+        "other_formal": 69,
+        "informal_only": 4,
+        "excluded": 2,
+        "formally_served": 95,
+        "not_formally_served": 6,
+        "strand_sum": 101,
+        "source_figure": "Figure 8 (p.29)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "age",
+        "group": "61+",
+        "year": 2024,
+        "banked": 18,
+        "other_formal": 68,
+        "informal_only": 7,
+        "excluded": 7,
+        "formally_served": 86,
+        "not_formally_served": 14,
+        "strand_sum": 100,
+        "source_figure": "Figure 8 (p.29)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "disability",
+        "group": "Adults with disabilities",
+        "year": 2024,
+        "banked": 14,
+        "other_formal": 74,
+        "informal_only": 5,
+        "excluded": 7,
+        "formally_served": 88,
+        "not_formally_served": 12,
+        "strand_sum": 100,
+        "source_figure": "Figure 9 (p.29)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "refugee",
+        "group": "Refugees",
+        "year": 2024,
+        "banked": 37,
+        "other_formal": 62,
+        "informal_only": 0,
+        "excluded": 1,
+        "formally_served": 99,
+        "not_formally_served": 1,
+        "strand_sum": 100,
+        "source_figure": "Figure 10 (p.29)",
+        "transcription_note": "Only the red (excluded) label \"1\" is printed; informal-only segment not visible \u2014 recorded as 0"
+      },
+      {
+        "dimension": "livelihood",
+        "group": "Formal sector",
+        "year": 2024,
+        "banked": 69,
+        "other_formal": 31,
+        "informal_only": 0,
+        "excluded": 0,
+        "formally_served": 100,
+        "not_formally_served": 0,
+        "strand_sum": 100,
+        "source_figure": "Figure 11 (p.30)",
+        "transcription_note": "Only two segments printed"
+      },
+      {
+        "dimension": "livelihood",
+        "group": "Self employed",
+        "year": 2024,
+        "banked": 43,
+        "other_formal": 56,
+        "informal_only": 1,
+        "excluded": 0,
+        "formally_served": 99,
+        "not_formally_served": 1,
+        "strand_sum": 100,
+        "source_figure": "Figure 11 (p.30)",
+        "transcription_note": "Trailing \"1\" is in the informal-only (green) segment at 300 dpi; no excluded segment visible"
+      },
+      {
+        "dimension": "livelihood",
+        "group": "Dependents",
+        "year": 2024,
+        "banked": 15,
+        "other_formal": 71,
+        "informal_only": 4,
+        "excluded": 11,
+        "formally_served": 86,
+        "not_formally_served": 15,
+        "strand_sum": 101,
+        "source_figure": "Figure 11 (p.30)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "livelihood",
+        "group": "Informal sector",
+        "year": 2024,
+        "banked": 14,
+        "other_formal": 76,
+        "informal_only": 6,
+        "excluded": 3,
+        "formally_served": 90,
+        "not_formally_served": 9,
+        "strand_sum": 99,
+        "source_figure": "Figure 11 (p.30)",
+        "transcription_note": null
+      },
+      {
+        "dimension": "livelihood",
+        "group": "Farming activities",
+        "year": 2024,
+        "banked": 17,
+        "other_formal": 77,
+        "informal_only": 4,
+        "excluded": 1,
+        "formally_served": 94,
+        "not_formally_served": 5,
+        "strand_sum": 99,
+        "source_figure": "Figure 11 (p.30)",
+        "transcription_note": null
+      }
+    ],
+    "finscope_products": [
+      {
+        "product": "Mobile money",
+        "percent_adults": 77,
+        "source": "FinScope 2024 report p.12 (Turning to monitoring progress)",
+        "note": "Accounts in own name"
+      },
+      {
+        "product": "Umurenge SACCO",
+        "percent_adults": 28,
+        "source": "FinScope 2024 report p.12",
+        "note": "Accounts in own name"
+      },
+      {
+        "product": "Insurance",
+        "percent_adults": 27,
+        "source": "FinScope 2024 report p.12",
+        "note": null
+      },
+      {
+        "product": "Pension",
+        "percent_adults": 25,
+        "source": "FinScope 2024 report p.12",
+        "note": null
+      },
+      {
+        "product": "Bank",
+        "percent_adults": 22,
+        "source": "FinScope 2024 report p.12",
+        "note": "Equals banked share of the access strand (Figure 5)"
+      },
+      {
+        "product": "MFI",
+        "percent_adults": 7,
+        "source": "FinScope 2024 report p.12",
+        "note": null
+      },
+      {
+        "product": "Any financial product account in own name",
+        "percent_adults": 86,
+        "source": "FinScope 2024 report p.12",
+        "note": "6.9 million adults"
+      }
+    ],
+    "vup": {
+      "beneficiaries_thousands": 410.4,
+      "population_thousands": 13549.5,
+      "poverty_rate_beneficiaries": 40.9,
+      "poverty_rate_all": 27.4,
+      "component_shares": {
+        "Direct Support": 22.7,
+        "Classic Public Work": 22.5,
+        "Expanded Public Work": 18.8,
+        "NSDS": 28.8,
+        "Financial Services": 11.9
+      },
+      "reference": "EICV7 Main Indicator Report tables, Tables 10.1, 10.2, 10.4 (EICV7 cross-section + VUP survey)"
+    }
+  },
+  "provinces": [
+    {
+      "province": "City of Kigali",
+      "poverty_rate": {
+        "value": 9.05,
+        "se": 1.064,
+        "ci_low": 6.97,
+        "ci_high": 11.14,
+        "cv": 11.75,
+        "deff": 2.84
+      },
+      "mobile_phone_households": {
+        "value": 96.28,
+        "se": 0.478,
+        "ci_low": 95.35,
+        "ci_high": 97.22,
+        "cv": 0.5,
+        "deff": 1.439
+      },
+      "smartphone_households": {
+        "value": 69.21,
+        "se": 1.6,
+        "ci_low": 66.07,
+        "ci_high": 72.35,
+        "cv": 2.31,
+        "deff": 2.708
+      },
+      "internet_households": {
+        "value": 65.91,
+        "se": 1.753,
+        "ci_low": 62.47,
+        "ci_high": 69.35,
+        "cv": 2.66,
+        "deff": 3.085
+      },
+      "health_insurance": {
+        "value": 84.19,
+        "se": 1.141,
+        "ci_low": 81.95,
+        "ci_high": 86.43,
+        "cv": 1.36,
+        "deff": 8.34
+      },
+      "extreme_poverty_rate": {
+        "value": 1.09,
+        "se": 0.393,
+        "ci_low": 0.32,
+        "ci_high": 1.86,
+        "cv": 36.19,
+        "deff": 2.969
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 14.3,
+        "decrease_pp": 5.3
+      },
+      "finscope": {
+        "banked": 57,
+        "other_formal": 41,
+        "informal_only": 1,
+        "excluded": 1,
+        "formally_served": 98,
+        "not_formally_served": 2,
+        "strand_sum": 100,
+        "source_figure": "Figure 12 (p.30)",
+        "transcription_note": "Merged label \"11\" read visually as informal 1 / excluded 1"
+      }
+    },
+    {
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 34.67,
+        "se": 1.014,
+        "ci_low": 32.68,
+        "ci_high": 36.66,
+        "cv": 2.92,
+        "deff": 1.528
+      },
+      "mobile_phone_households": {
+        "value": 76.99,
+        "se": 0.756,
+        "ci_low": 75.51,
+        "ci_high": 78.48,
+        "cv": 0.98,
+        "deff": 1.104
+      },
+      "smartphone_households": {
+        "value": 22.73,
+        "se": 0.831,
+        "ci_low": 21.1,
+        "ci_high": 24.36,
+        "cv": 3.66,
+        "deff": 1.345
+      },
+      "internet_households": {
+        "value": 21.05,
+        "se": 0.834,
+        "ci_low": 19.42,
+        "ci_high": 22.69,
+        "cv": 3.96,
+        "deff": 1.43
+      },
+      "health_insurance": {
+        "value": 84.83,
+        "se": 0.701,
+        "ci_low": 83.46,
+        "ci_high": 86.21,
+        "cv": 0.83,
+        "deff": 5.304
+      },
+      "extreme_poverty_rate": {
+        "value": 7.4,
+        "se": 0.609,
+        "ci_low": 6.21,
+        "ci_high": 8.6,
+        "cv": 8.23,
+        "deff": 1.82
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 47.6,
+        "decrease_pp": 12.9
+      },
+      "finscope": {
+        "banked": 15,
+        "other_formal": 76,
+        "informal_only": 5,
+        "excluded": 4,
+        "formally_served": 91,
+        "not_formally_served": 9,
+        "strand_sum": 100,
+        "source_figure": "Figure 12 (p.30)",
+        "transcription_note": null
+      }
+    },
+    {
+      "province": "Western",
+      "poverty_rate": {
+        "value": 37.41,
+        "se": 1.169,
+        "ci_low": 35.12,
+        "ci_high": 39.7,
+        "cv": 3.12,
+        "deff": 1.883
+      },
+      "mobile_phone_households": {
+        "value": 85.51,
+        "se": 0.685,
+        "ci_low": 84.17,
+        "ci_high": 86.86,
+        "cv": 0.8,
+        "deff": 1.149
+      },
+      "smartphone_households": {
+        "value": 30.51,
+        "se": 1.028,
+        "ci_low": 28.49,
+        "ci_high": 32.53,
+        "cv": 3.37,
+        "deff": 1.511
+      },
+      "internet_households": {
+        "value": 25.5,
+        "se": 0.871,
+        "ci_low": 23.79,
+        "ci_high": 27.21,
+        "cv": 3.41,
+        "deff": 1.21
+      },
+      "health_insurance": {
+        "value": 82.89,
+        "se": 0.812,
+        "ci_low": 81.29,
+        "ci_high": 84.48,
+        "cv": 0.98,
+        "deff": 6.194
+      },
+      "extreme_poverty_rate": {
+        "value": 8.99,
+        "se": 0.762,
+        "ci_low": 7.5,
+        "ci_high": 10.49,
+        "cv": 8.47,
+        "deff": 2.289
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 51.7,
+        "decrease_pp": 14.3
+      },
+      "finscope": {
+        "banked": 15,
+        "other_formal": 75,
+        "informal_only": 5,
+        "excluded": 5,
+        "formally_served": 90,
+        "not_formally_served": 10,
+        "strand_sum": 100,
+        "source_figure": "Figure 12 (p.30)",
+        "transcription_note": null
+      }
+    },
+    {
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 20.15,
+        "se": 1.078,
+        "ci_low": 18.04,
+        "ci_high": 22.26,
+        "cv": 5.35,
+        "deff": 1.683
+      },
+      "mobile_phone_households": {
+        "value": 84.68,
+        "se": 0.814,
+        "ci_low": 83.08,
+        "ci_high": 86.28,
+        "cv": 0.96,
+        "deff": 1.184
+      },
+      "smartphone_households": {
+        "value": 28.71,
+        "se": 1.199,
+        "ci_low": 26.36,
+        "ci_high": 31.06,
+        "cv": 4.18,
+        "deff": 1.628
+      },
+      "internet_households": {
+        "value": 23.49,
+        "se": 1.199,
+        "ci_low": 21.14,
+        "ci_high": 25.84,
+        "cv": 5.1,
+        "deff": 1.855
+      },
+      "health_insurance": {
+        "value": 91.67,
+        "se": 0.659,
+        "ci_low": 90.38,
+        "ci_high": 92.97,
+        "cv": 0.72,
+        "deff": 5.477
+      },
+      "extreme_poverty_rate": {
+        "value": 3.21,
+        "se": 0.535,
+        "ci_low": 2.17,
+        "ci_high": 4.26,
+        "cv": 16.63,
+        "deff": 2.142
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 33.0,
+        "decrease_pp": 12.8
+      },
+      "finscope": {
+        "banked": 15,
+        "other_formal": 75,
+        "informal_only": 5,
+        "excluded": 5,
+        "formally_served": 90,
+        "not_formally_served": 10,
+        "strand_sum": 100,
+        "source_figure": "Figure 12 (p.30)",
+        "transcription_note": null
+      }
+    },
+    {
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 26.78,
+        "se": 1.043,
+        "ci_low": 24.73,
+        "ci_high": 28.82,
+        "cv": 3.9,
+        "deff": 2.254
+      },
+      "mobile_phone_households": {
+        "value": 83.77,
+        "se": 0.692,
+        "ci_low": 82.41,
+        "ci_high": 85.13,
+        "cv": 0.83,
+        "deff": 1.418
+      },
+      "smartphone_households": {
+        "value": 30.83,
+        "se": 1.012,
+        "ci_low": 28.85,
+        "ci_high": 32.81,
+        "cv": 3.28,
+        "deff": 1.933
+      },
+      "internet_households": {
+        "value": 23.94,
+        "se": 0.949,
+        "ci_low": 22.08,
+        "ci_high": 25.8,
+        "cv": 3.96,
+        "deff": 1.992
+      },
+      "health_insurance": {
+        "value": 84.55,
+        "se": 0.756,
+        "ci_low": 83.06,
+        "ci_high": 86.03,
+        "cv": 0.89,
+        "deff": 7.308
+      },
+      "extreme_poverty_rate": {
+        "value": 4.46,
+        "se": 0.456,
+        "ci_low": 3.56,
+        "ci_high": 5.35,
+        "cv": 10.24,
+        "deff": 1.984
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 39.2,
+        "decrease_pp": 12.4
+      },
+      "finscope": {
+        "banked": 17,
+        "other_formal": 75,
+        "informal_only": 5,
+        "excluded": 3,
+        "formally_served": 92,
+        "not_formally_served": 8,
+        "strand_sum": 100,
+        "source_figure": "Figure 12 (p.30)",
+        "transcription_note": null
+      }
+    }
+  ],
+  "districts": [
+    {
+      "district": "Nyarugenge",
+      "province": "City of Kigali",
+      "poverty_rate": {
+        "value": 6.8,
+        "se": 1.203,
+        "ci_low": 4.44,
+        "ci_high": 9.16,
+        "cv": 17.69,
+        "deff": 0.995
+      },
+      "mobile_phone_households": {
+        "value": 94.06,
+        "se": 1.167,
+        "ci_low": 91.77,
+        "ci_high": 96.35,
+        "cv": 1.24,
+        "deff": 1.191
+      },
+      "smartphone_households": {
+        "value": 68.96,
+        "se": 2.605,
+        "ci_low": 63.85,
+        "ci_high": 74.07,
+        "cv": 3.78,
+        "deff": 1.548
+      },
+      "internet_households": {
+        "value": 65.65,
+        "se": 2.577,
+        "ci_low": 60.6,
+        "ci_high": 70.71,
+        "cv": 3.93,
+        "deff": 1.439
+      },
+      "health_insurance": {
+        "value": 81.76,
+        "se": 1.799,
+        "ci_low": 78.24,
+        "ci_high": 85.29,
+        "cv": 2.2,
+        "deff": 3.902
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 11.6,
+        "decrease_pp": 4.8,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 59,
+        "other_formal": 40,
+        "informal_only": 0,
+        "excluded": 1,
+        "formally_served": 99,
+        "not_formally_served": 1,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": "Only the red (excluded) label \"1\" is printed; informal-only segment not visible \u2014 recorded as 0 (<0.5)"
+      }
+    },
+    {
+      "district": "Gasabo",
+      "province": "City of Kigali",
+      "poverty_rate": {
+        "value": 11.06,
+        "se": 1.847,
+        "ci_low": 7.44,
+        "ci_high": 14.68,
+        "cv": 16.7,
+        "deff": 3.735
+      },
+      "mobile_phone_households": {
+        "value": 96.51,
+        "se": 0.685,
+        "ci_low": 95.17,
+        "ci_high": 97.85,
+        "cv": 0.71,
+        "deff": 1.605
+      },
+      "smartphone_households": {
+        "value": 66.95,
+        "se": 2.575,
+        "ci_low": 61.9,
+        "ci_high": 72.0,
+        "cv": 3.85,
+        "deff": 3.458
+      },
+      "internet_households": {
+        "value": 63.67,
+        "se": 2.932,
+        "ci_low": 57.92,
+        "ci_high": 69.42,
+        "cv": 4.6,
+        "deff": 4.288
+      },
+      "health_insurance": {
+        "value": 86.25,
+        "se": 1.796,
+        "ci_low": 82.73,
+        "ci_high": 89.78,
+        "cv": 2.08,
+        "deff": 12.101
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 18.1,
+        "decrease_pp": 7.0,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 51,
+        "other_formal": 46,
+        "informal_only": 2,
+        "excluded": 1,
+        "formally_served": 97,
+        "not_formally_served": 3,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": "Merged label \"21\" read visually at 600 dpi as informal 2 / excluded 1"
+      }
+    },
+    {
+      "district": "Kicukiro",
+      "province": "City of Kigali",
+      "poverty_rate": {
+        "value": 6.93,
+        "se": 1.337,
+        "ci_low": 4.3,
+        "ci_high": 9.55,
+        "cv": 19.31,
+        "deff": 1.533
+      },
+      "mobile_phone_households": {
+        "value": 97.63,
+        "se": 0.744,
+        "ci_low": 96.17,
+        "ci_high": 99.09,
+        "cv": 0.76,
+        "deff": 1.468
+      },
+      "smartphone_households": {
+        "value": 73.66,
+        "se": 2.579,
+        "ci_low": 68.6,
+        "ci_high": 78.72,
+        "cv": 3.5,
+        "deff": 2.101
+      },
+      "internet_households": {
+        "value": 70.32,
+        "se": 2.606,
+        "ci_low": 65.21,
+        "ci_high": 75.43,
+        "cv": 3.71,
+        "deff": 1.994
+      },
+      "health_insurance": {
+        "value": 82.08,
+        "se": 1.989,
+        "ci_low": 78.17,
+        "ci_high": 85.98,
+        "cv": 2.42,
+        "deff": 6.129
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 8.2,
+        "decrease_pp": 1.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 62,
+        "other_formal": 35,
+        "informal_only": 2,
+        "excluded": 2,
+        "formally_served": 97,
+        "not_formally_served": 4,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": "Merged label \"22\" read visually at 600 dpi as informal 2 / excluded 2"
+      }
+    },
+    {
+      "district": "Nyanza",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 43.27,
+        "se": 2.824,
+        "ci_low": 37.73,
+        "ci_high": 48.81,
+        "cv": 6.53,
+        "deff": 1.318
+      },
+      "mobile_phone_households": {
+        "value": 77.41,
+        "se": 2.243,
+        "ci_low": 73.01,
+        "ci_high": 81.82,
+        "cv": 2.9,
+        "deff": 1.206
+      },
+      "smartphone_households": {
+        "value": 20.97,
+        "se": 2.46,
+        "ci_low": 16.15,
+        "ci_high": 25.8,
+        "cv": 11.73,
+        "deff": 1.53
+      },
+      "internet_households": {
+        "value": 14.95,
+        "se": 2.079,
+        "ci_low": 10.87,
+        "ci_high": 19.03,
+        "cv": 13.91,
+        "deff": 1.425
+      },
+      "health_insurance": {
+        "value": 82.32,
+        "se": 1.941,
+        "ci_low": 78.51,
+        "ci_high": 86.13,
+        "cv": 2.36,
+        "deff": 4.32
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 46.9,
+        "decrease_pp": 3.6,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 17,
+        "other_formal": 74,
+        "informal_only": 4,
+        "excluded": 4,
+        "formally_served": 91,
+        "not_formally_served": 8,
+        "strand_sum": 99,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Gisagara",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 45.59,
+        "se": 2.686,
+        "ci_low": 40.32,
+        "ci_high": 50.86,
+        "cv": 5.89,
+        "deff": 1.292
+      },
+      "mobile_phone_households": {
+        "value": 67.8,
+        "se": 2.291,
+        "ci_low": 63.31,
+        "ci_high": 72.29,
+        "cv": 3.38,
+        "deff": 1.078
+      },
+      "smartphone_households": {
+        "value": 15.1,
+        "se": 1.88,
+        "ci_low": 11.41,
+        "ci_high": 18.78,
+        "cv": 12.45,
+        "deff": 1.236
+      },
+      "internet_households": {
+        "value": 28.49,
+        "se": 2.46,
+        "ci_low": 23.67,
+        "ci_high": 33.32,
+        "cv": 8.63,
+        "deff": 1.332
+      },
+      "health_insurance": {
+        "value": 85.04,
+        "se": 1.8,
+        "ci_low": 81.51,
+        "ci_high": 88.58,
+        "cv": 2.12,
+        "deff": 4.67
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 59.5,
+        "decrease_pp": 13.9,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 10,
+        "other_formal": 77,
+        "informal_only": 9,
+        "excluded": 4,
+        "formally_served": 87,
+        "not_formally_served": 13,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Nyaruguru",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 39.7,
+        "se": 2.537,
+        "ci_low": 34.72,
+        "ci_high": 44.67,
+        "cv": 6.39,
+        "deff": 1.027
+      },
+      "mobile_phone_households": {
+        "value": 75.25,
+        "se": 1.956,
+        "ci_low": 71.41,
+        "ci_high": 79.08,
+        "cv": 2.6,
+        "deff": 0.692
+      },
+      "smartphone_households": {
+        "value": 18.42,
+        "se": 1.956,
+        "ci_low": 14.58,
+        "ci_high": 22.25,
+        "cv": 10.62,
+        "deff": 0.857
+      },
+      "internet_households": {
+        "value": 16.84,
+        "se": 1.879,
+        "ci_low": 13.16,
+        "ci_high": 20.53,
+        "cv": 11.16,
+        "deff": 0.849
+      },
+      "health_insurance": {
+        "value": 90.1,
+        "se": 1.478,
+        "ci_low": 87.2,
+        "ci_high": 93.0,
+        "cv": 1.64,
+        "deff": 3.86
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 52.6,
+        "decrease_pp": 12.9,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 6,
+        "other_formal": 78,
+        "informal_only": 5,
+        "excluded": 10,
+        "formally_served": 84,
+        "not_formally_served": 15,
+        "strand_sum": 99,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Huye",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 24.19,
+        "se": 2.701,
+        "ci_low": 18.89,
+        "ci_high": 29.49,
+        "cv": 11.17,
+        "deff": 1.652
+      },
+      "mobile_phone_households": {
+        "value": 79.23,
+        "se": 1.868,
+        "ci_low": 75.56,
+        "ci_high": 82.89,
+        "cv": 2.36,
+        "deff": 0.911
+      },
+      "smartphone_households": {
+        "value": 30.19,
+        "se": 2.5,
+        "ci_low": 25.29,
+        "ci_high": 35.09,
+        "cv": 8.28,
+        "deff": 1.273
+      },
+      "internet_households": {
+        "value": 28.06,
+        "se": 2.733,
+        "ci_low": 22.7,
+        "ci_high": 33.42,
+        "cv": 9.74,
+        "deff": 1.589
+      },
+      "health_insurance": {
+        "value": 82.88,
+        "se": 1.799,
+        "ci_low": 79.35,
+        "ci_high": 86.4,
+        "cv": 2.17,
+        "deff": 3.902
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 39.4,
+        "decrease_pp": 15.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 15,
+        "other_formal": 73,
+        "informal_only": 6,
+        "excluded": 6,
+        "formally_served": 88,
+        "not_formally_served": 12,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Nyamagabe",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 51.39,
+        "se": 3.214,
+        "ci_low": 45.09,
+        "ci_high": 57.7,
+        "cv": 6.25,
+        "deff": 1.67
+      },
+      "mobile_phone_households": {
+        "value": 71.85,
+        "se": 2.511,
+        "ci_low": 66.93,
+        "ci_high": 76.77,
+        "cv": 3.49,
+        "deff": 1.301
+      },
+      "smartphone_households": {
+        "value": 15.06,
+        "se": 2.135,
+        "ci_low": 10.87,
+        "ci_high": 19.25,
+        "cv": 14.18,
+        "deff": 1.487
+      },
+      "internet_households": {
+        "value": 9.24,
+        "se": 1.55,
+        "ci_low": 6.2,
+        "ci_high": 12.28,
+        "cv": 16.77,
+        "deff": 1.195
+      },
+      "health_insurance": {
+        "value": 86.0,
+        "se": 1.826,
+        "ci_low": 82.42,
+        "ci_high": 89.58,
+        "cv": 2.12,
+        "deff": 4.608
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 67.6,
+        "decrease_pp": 16.2,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 11,
+        "other_formal": 84,
+        "informal_only": 4,
+        "excluded": 1,
+        "formally_served": 95,
+        "not_formally_served": 5,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Ruhango",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 14.99,
+        "se": 2.438,
+        "ci_low": 10.21,
+        "ci_high": 19.78,
+        "cv": 16.26,
+        "deff": 1.841
+      },
+      "mobile_phone_households": {
+        "value": 75.71,
+        "se": 2.255,
+        "ci_low": 71.29,
+        "ci_high": 80.13,
+        "cv": 2.98,
+        "deff": 1.169
+      },
+      "smartphone_households": {
+        "value": 21.84,
+        "se": 2.489,
+        "ci_low": 16.95,
+        "ci_high": 26.72,
+        "cv": 11.4,
+        "deff": 1.535
+      },
+      "internet_households": {
+        "value": 18.65,
+        "se": 2.19,
+        "ci_low": 14.35,
+        "ci_high": 22.94,
+        "cv": 11.74,
+        "deff": 1.337
+      },
+      "health_insurance": {
+        "value": 83.82,
+        "se": 1.93,
+        "ci_low": 80.04,
+        "ci_high": 87.61,
+        "cv": 2.3,
+        "deff": 4.471
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 26.2,
+        "decrease_pp": 11.2,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 22,
+        "other_formal": 70,
+        "informal_only": 5,
+        "excluded": 3,
+        "formally_served": 92,
+        "not_formally_served": 8,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Muhanga",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 14.95,
+        "se": 2.187,
+        "ci_low": 10.66,
+        "ci_high": 19.24,
+        "cv": 14.63,
+        "deff": 1.445
+      },
+      "mobile_phone_households": {
+        "value": 82.77,
+        "se": 1.831,
+        "ci_low": 79.17,
+        "ci_high": 86.36,
+        "cv": 2.21,
+        "deff": 0.985
+      },
+      "smartphone_households": {
+        "value": 28.98,
+        "se": 2.377,
+        "ci_low": 24.32,
+        "ci_high": 33.65,
+        "cv": 8.2,
+        "deff": 1.15
+      },
+      "internet_households": {
+        "value": 25.69,
+        "se": 2.276,
+        "ci_low": 21.22,
+        "ci_high": 30.15,
+        "cv": 8.86,
+        "deff": 1.137
+      },
+      "health_insurance": {
+        "value": 89.83,
+        "se": 1.587,
+        "ci_low": 86.72,
+        "ci_high": 92.95,
+        "cv": 1.77,
+        "deff": 4.368
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 33.2,
+        "decrease_pp": 18.3,
+        "annex_note": "Decrease printed 18.3; 33.2 - 15.0 = 18.2 (rounding of unrounded inputs)"
+      },
+      "finscope": {
+        "banked": 17,
+        "other_formal": 76,
+        "informal_only": 5,
+        "excluded": 2,
+        "formally_served": 93,
+        "not_formally_served": 7,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Kamonyi",
+      "province": "Southern",
+      "poverty_rate": {
+        "value": 39.65,
+        "se": 3.334,
+        "ci_low": 33.11,
+        "ci_high": 46.18,
+        "cv": 8.41,
+        "deff": 2.488
+      },
+      "mobile_phone_households": {
+        "value": 84.28,
+        "se": 1.954,
+        "ci_low": 80.44,
+        "ci_high": 88.11,
+        "cv": 2.32,
+        "deff": 1.52
+      },
+      "smartphone_households": {
+        "value": 29.12,
+        "se": 2.548,
+        "ci_low": 24.12,
+        "ci_high": 34.12,
+        "cv": 8.75,
+        "deff": 1.66
+      },
+      "internet_households": {
+        "value": 24.16,
+        "se": 2.787,
+        "ci_low": 18.69,
+        "ci_high": 29.62,
+        "cv": 11.54,
+        "deff": 2.237
+      },
+      "health_insurance": {
+        "value": 80.6,
+        "se": 2.562,
+        "ci_low": 75.57,
+        "ci_high": 85.62,
+        "cv": 3.18,
+        "deff": 9.278
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 53.0,
+        "decrease_pp": 13.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 16,
+        "other_formal": 76,
+        "informal_only": 4,
+        "excluded": 3,
+        "formally_served": 92,
+        "not_formally_served": 7,
+        "strand_sum": 99,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Karongi",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 38.19,
+        "se": 3.358,
+        "ci_low": 31.6,
+        "ci_high": 44.78,
+        "cv": 8.79,
+        "deff": 1.974
+      },
+      "mobile_phone_households": {
+        "value": 84.26,
+        "se": 2.049,
+        "ci_low": 80.24,
+        "ci_high": 88.28,
+        "cv": 2.43,
+        "deff": 1.273
+      },
+      "smartphone_households": {
+        "value": 25.89,
+        "se": 2.825,
+        "ci_low": 20.35,
+        "ci_high": 31.43,
+        "cv": 10.91,
+        "deff": 1.672
+      },
+      "internet_households": {
+        "value": 24.05,
+        "se": 2.656,
+        "ci_low": 18.84,
+        "ci_high": 29.26,
+        "cv": 11.04,
+        "deff": 1.553
+      },
+      "health_insurance": {
+        "value": 85.07,
+        "se": 1.847,
+        "ci_low": 81.45,
+        "ci_high": 88.69,
+        "cv": 2.17,
+        "deff": 4.579
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 53.0,
+        "decrease_pp": 14.8,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 8,
+        "other_formal": 83,
+        "informal_only": 6,
+        "excluded": 3,
+        "formally_served": 91,
+        "not_formally_served": 9,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Rutsiro",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 40.78,
+        "se": 2.991,
+        "ci_low": 34.91,
+        "ci_high": 46.64,
+        "cv": 7.34,
+        "deff": 1.513
+      },
+      "mobile_phone_households": {
+        "value": 82.26,
+        "se": 2.089,
+        "ci_low": 78.16,
+        "ci_high": 86.36,
+        "cv": 2.54,
+        "deff": 1.147
+      },
+      "smartphone_households": {
+        "value": 20.53,
+        "se": 2.257,
+        "ci_low": 16.1,
+        "ci_high": 24.96,
+        "cv": 10.99,
+        "deff": 1.196
+      },
+      "internet_households": {
+        "value": 16.18,
+        "se": 2.021,
+        "ci_low": 12.21,
+        "ci_high": 20.14,
+        "cv": 12.49,
+        "deff": 1.154
+      },
+      "health_insurance": {
+        "value": 82.26,
+        "se": 2.317,
+        "ci_low": 77.72,
+        "ci_high": 86.81,
+        "cv": 2.82,
+        "deff": 6.193
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 59.9,
+        "decrease_pp": 19.1,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 9,
+        "other_formal": 78,
+        "informal_only": 6,
+        "excluded": 6,
+        "formally_served": 87,
+        "not_formally_served": 12,
+        "strand_sum": 99,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Rubavu",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 38.81,
+        "se": 3.097,
+        "ci_low": 32.73,
+        "ci_high": 44.88,
+        "cv": 7.98,
+        "deff": 2.454
+      },
+      "mobile_phone_households": {
+        "value": 85.04,
+        "se": 1.719,
+        "ci_low": 81.67,
+        "ci_high": 88.41,
+        "cv": 2.02,
+        "deff": 1.314
+      },
+      "smartphone_households": {
+        "value": 43.35,
+        "se": 2.953,
+        "ci_low": 37.56,
+        "ci_high": 49.14,
+        "cv": 6.81,
+        "deff": 2.007
+      },
+      "internet_households": {
+        "value": 27.48,
+        "se": 1.926,
+        "ci_low": 23.7,
+        "ci_high": 31.26,
+        "cv": 7.01,
+        "deff": 1.053
+      },
+      "health_insurance": {
+        "value": 79.49,
+        "se": 1.904,
+        "ci_low": 75.76,
+        "ci_high": 83.23,
+        "cv": 2.4,
+        "deff": 5.567
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 49.2,
+        "decrease_pp": 10.4,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 22,
+        "other_formal": 71,
+        "informal_only": 4,
+        "excluded": 3,
+        "formally_served": 93,
+        "not_formally_served": 7,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Nyabihu",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 20.41,
+        "se": 2.229,
+        "ci_low": 16.03,
+        "ci_high": 24.78,
+        "cv": 10.92,
+        "deff": 1.095
+      },
+      "mobile_phone_households": {
+        "value": 85.78,
+        "se": 1.679,
+        "ci_low": 82.48,
+        "ci_high": 89.07,
+        "cv": 1.96,
+        "deff": 0.8
+      },
+      "smartphone_households": {
+        "value": 26.05,
+        "se": 2.127,
+        "ci_low": 21.88,
+        "ci_high": 30.22,
+        "cv": 8.16,
+        "deff": 0.812
+      },
+      "internet_households": {
+        "value": 22.09,
+        "se": 2.158,
+        "ci_low": 17.86,
+        "ci_high": 26.32,
+        "cv": 9.77,
+        "deff": 0.936
+      },
+      "health_insurance": {
+        "value": 87.47,
+        "se": 1.581,
+        "ci_low": 84.37,
+        "ci_high": 90.57,
+        "cv": 1.81,
+        "deff": 3.368
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 39.6,
+        "decrease_pp": 19.4,
+        "annex_note": "Excel Table A9.23 gives 20.41"
+      },
+      "finscope": {
+        "banked": 13,
+        "other_formal": 74,
+        "informal_only": 5,
+        "excluded": 8,
+        "formally_served": 87,
+        "not_formally_served": 13,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Ngororero",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 30.24,
+        "se": 2.695,
+        "ci_low": 24.96,
+        "ci_high": 35.53,
+        "cv": 8.91,
+        "deff": 1.349
+      },
+      "mobile_phone_households": {
+        "value": 82.43,
+        "se": 1.9,
+        "ci_low": 78.7,
+        "ci_high": 86.16,
+        "cv": 2.3,
+        "deff": 1.027
+      },
+      "smartphone_households": {
+        "value": 19.4,
+        "se": 2.205,
+        "ci_low": 15.08,
+        "ci_high": 23.73,
+        "cv": 11.37,
+        "deff": 1.281
+      },
+      "internet_households": {
+        "value": 13.85,
+        "se": 1.846,
+        "ci_low": 10.23,
+        "ci_high": 17.47,
+        "cv": 13.33,
+        "deff": 1.177
+      },
+      "health_insurance": {
+        "value": 87.76,
+        "se": 1.868,
+        "ci_low": 84.1,
+        "ci_high": 91.42,
+        "cv": 2.13,
+        "deff": 5.25
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 44.4,
+        "decrease_pp": 14.2,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 10,
+        "other_formal": 78,
+        "informal_only": 5,
+        "excluded": 7,
+        "formally_served": 88,
+        "not_formally_served": 12,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Rusizi",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 44.16,
+        "se": 3.435,
+        "ci_low": 37.43,
+        "ci_high": 50.9,
+        "cv": 7.78,
+        "deff": 2.663
+      },
+      "mobile_phone_households": {
+        "value": 90.44,
+        "se": 1.451,
+        "ci_low": 87.59,
+        "ci_high": 93.29,
+        "cv": 1.6,
+        "deff": 1.173
+      },
+      "smartphone_households": {
+        "value": 40.59,
+        "se": 3.035,
+        "ci_low": 34.64,
+        "ci_high": 46.55,
+        "cv": 7.48,
+        "deff": 1.841
+      },
+      "internet_households": {
+        "value": 44.14,
+        "se": 2.639,
+        "ci_low": 38.96,
+        "ci_high": 49.31,
+        "cv": 5.98,
+        "deff": 1.361
+      },
+      "health_insurance": {
+        "value": 78.09,
+        "se": 2.517,
+        "ci_low": 73.16,
+        "ci_high": 83.03,
+        "cv": 3.22,
+        "deff": 8.497
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 59.0,
+        "decrease_pp": 14.9,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 22,
+        "other_formal": 68,
+        "informal_only": 5,
+        "excluded": 6,
+        "formally_served": 90,
+        "not_formally_served": 11,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Nyamasheke",
+      "province": "Western",
+      "poverty_rate": {
+        "value": 42.67,
+        "se": 2.573,
+        "ci_low": 37.63,
+        "ci_high": 47.72,
+        "cv": 6.03,
+        "deff": 1.335
+      },
+      "mobile_phone_households": {
+        "value": 87.37,
+        "se": 1.775,
+        "ci_low": 83.89,
+        "ci_high": 90.86,
+        "cv": 2.03,
+        "deff": 1.263
+      },
+      "smartphone_households": {
+        "value": 29.8,
+        "se": 2.636,
+        "ci_low": 24.63,
+        "ci_high": 34.97,
+        "cv": 8.85,
+        "deff": 1.469
+      },
+      "internet_households": {
+        "value": 25.58,
+        "se": 2.559,
+        "ci_low": 20.56,
+        "ci_high": 30.6,
+        "cv": 10.0,
+        "deff": 1.52
+      },
+      "health_insurance": {
+        "value": 83.97,
+        "se": 2.165,
+        "ci_low": 79.72,
+        "ci_high": 88.22,
+        "cv": 2.58,
+        "deff": 7.084
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 53.6,
+        "decrease_pp": 10.8,
+        "annex_note": "Excel Table A9.23 gives 42.67"
+      },
+      "finscope": {
+        "banked": 13,
+        "other_formal": 78,
+        "informal_only": 3,
+        "excluded": 6,
+        "formally_served": 91,
+        "not_formally_served": 9,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Rulindo",
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 21.64,
+        "se": 2.089,
+        "ci_low": 17.54,
+        "ci_high": 25.73,
+        "cv": 9.65,
+        "deff": 1.059
+      },
+      "mobile_phone_households": {
+        "value": 86.56,
+        "se": 1.862,
+        "ci_low": 82.91,
+        "ci_high": 90.21,
+        "cv": 2.15,
+        "deff": 1.247
+      },
+      "smartphone_households": {
+        "value": 28.99,
+        "se": 3.051,
+        "ci_low": 23.0,
+        "ci_high": 34.97,
+        "cv": 10.53,
+        "deff": 1.893
+      },
+      "internet_households": {
+        "value": 25.98,
+        "se": 2.892,
+        "ci_low": 20.31,
+        "ci_high": 31.65,
+        "cv": 11.13,
+        "deff": 1.82
+      },
+      "health_insurance": {
+        "value": 90.41,
+        "se": 1.846,
+        "ci_low": 86.79,
+        "ci_high": 94.03,
+        "cv": 2.04,
+        "deff": 6.672
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 35.2,
+        "decrease_pp": 13.6,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 13,
+        "other_formal": 74,
+        "informal_only": 4,
+        "excluded": 8,
+        "formally_served": 87,
+        "not_formally_served": 12,
+        "strand_sum": 99,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Gakenke",
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 24.47,
+        "se": 2.894,
+        "ci_low": 18.8,
+        "ci_high": 30.15,
+        "cv": 11.83,
+        "deff": 1.879
+      },
+      "mobile_phone_households": {
+        "value": 81.43,
+        "se": 1.712,
+        "ci_low": 78.07,
+        "ci_high": 84.79,
+        "cv": 2.1,
+        "deff": 0.835
+      },
+      "smartphone_households": {
+        "value": 22.78,
+        "se": 2.321,
+        "ci_low": 18.22,
+        "ci_high": 27.33,
+        "cv": 10.19,
+        "deff": 1.32
+      },
+      "internet_households": {
+        "value": 18.1,
+        "se": 2.229,
+        "ci_low": 13.72,
+        "ci_high": 22.47,
+        "cv": 12.32,
+        "deff": 1.444
+      },
+      "health_insurance": {
+        "value": 96.35,
+        "se": 0.777,
+        "ci_low": 94.83,
+        "ci_high": 97.87,
+        "cv": 0.81,
+        "deff": 2.939
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 36.7,
+        "decrease_pp": 12.2,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 18,
+        "other_formal": 69,
+        "informal_only": 5,
+        "excluded": 8,
+        "formally_served": 87,
+        "not_formally_served": 13,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Musanze",
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 20.98,
+        "se": 2.703,
+        "ci_low": 15.68,
+        "ci_high": 26.28,
+        "cv": 12.88,
+        "deff": 2.456
+      },
+      "mobile_phone_households": {
+        "value": 88.51,
+        "se": 1.599,
+        "ci_low": 85.37,
+        "ci_high": 91.65,
+        "cv": 1.81,
+        "deff": 1.382
+      },
+      "smartphone_households": {
+        "value": 38.45,
+        "se": 2.941,
+        "ci_low": 32.68,
+        "ci_high": 44.22,
+        "cv": 7.65,
+        "deff": 2.01
+      },
+      "internet_households": {
+        "value": 31.94,
+        "se": 3.142,
+        "ci_low": 25.78,
+        "ci_high": 38.1,
+        "cv": 9.84,
+        "deff": 2.497
+      },
+      "health_insurance": {
+        "value": 88.93,
+        "se": 1.684,
+        "ci_low": 85.62,
+        "ci_high": 92.23,
+        "cv": 1.89,
+        "deff": 6.62
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 42.3,
+        "decrease_pp": 21.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 24,
+        "other_formal": 71,
+        "informal_only": 5,
+        "excluded": 1,
+        "formally_served": 95,
+        "not_formally_served": 6,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Burera",
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 21.79,
+        "se": 1.846,
+        "ci_low": 18.17,
+        "ci_high": 25.41,
+        "cv": 8.47,
+        "deff": 0.854
+      },
+      "mobile_phone_households": {
+        "value": 82.95,
+        "se": 2.22,
+        "ci_low": 78.6,
+        "ci_high": 87.31,
+        "cv": 2.68,
+        "deff": 1.447
+      },
+      "smartphone_households": {
+        "value": 23.08,
+        "se": 1.866,
+        "ci_low": 19.42,
+        "ci_high": 26.74,
+        "cv": 8.08,
+        "deff": 0.814
+      },
+      "internet_households": {
+        "value": 16.96,
+        "se": 1.704,
+        "ci_low": 13.62,
+        "ci_high": 20.31,
+        "cv": 10.04,
+        "deff": 0.856
+      },
+      "health_insurance": {
+        "value": 93.04,
+        "se": 1.194,
+        "ci_low": 90.7,
+        "ci_high": 95.38,
+        "cv": 1.28,
+        "deff": 3.88
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 25.5,
+        "decrease_pp": 3.5,
+        "annex_note": "Excel Table A9.23 gives 21.79"
+      },
+      "finscope": {
+        "banked": 11,
+        "other_formal": 87,
+        "informal_only": 2,
+        "excluded": 1,
+        "formally_served": 98,
+        "not_formally_served": 3,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": "Merged label \"21\" read visually at 600 dpi as informal 2 / excluded 1"
+      }
+    },
+    {
+      "district": "Gicumbi",
+      "province": "Northern",
+      "poverty_rate": {
+        "value": 13.31,
+        "se": 2.099,
+        "ci_low": 9.19,
+        "ci_high": 17.43,
+        "cv": 15.77,
+        "deff": 1.992
+      },
+      "mobile_phone_households": {
+        "value": 83.14,
+        "se": 1.766,
+        "ci_low": 79.67,
+        "ci_high": 86.6,
+        "cv": 2.12,
+        "deff": 1.121
+      },
+      "smartphone_households": {
+        "value": 27.57,
+        "se": 2.742,
+        "ci_low": 22.19,
+        "ci_high": 32.95,
+        "cv": 9.95,
+        "deff": 1.897
+      },
+      "internet_households": {
+        "value": 22.19,
+        "se": 2.723,
+        "ci_low": 16.85,
+        "ci_high": 27.53,
+        "cv": 12.27,
+        "deff": 2.163
+      },
+      "health_insurance": {
+        "value": 90.77,
+        "se": 1.405,
+        "ci_low": 88.02,
+        "ci_high": 93.53,
+        "cv": 1.55,
+        "deff": 5.071
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 24.6,
+        "decrease_pp": 11.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 8,
+        "other_formal": 75,
+        "informal_only": 11,
+        "excluded": 7,
+        "formally_served": 83,
+        "not_formally_served": 18,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Rwamagana",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 23.86,
+        "se": 2.588,
+        "ci_low": 18.78,
+        "ci_high": 28.94,
+        "cv": 10.85,
+        "deff": 2.106
+      },
+      "mobile_phone_households": {
+        "value": 84.7,
+        "se": 1.679,
+        "ci_low": 81.41,
+        "ci_high": 88.0,
+        "cv": 1.98,
+        "deff": 1.267
+      },
+      "smartphone_households": {
+        "value": 39.21,
+        "se": 2.638,
+        "ci_low": 34.03,
+        "ci_high": 44.38,
+        "cv": 6.73,
+        "deff": 1.7
+      },
+      "internet_households": {
+        "value": 36.77,
+        "se": 2.738,
+        "ci_low": 31.4,
+        "ci_high": 42.14,
+        "cv": 7.45,
+        "deff": 1.878
+      },
+      "health_insurance": {
+        "value": 82.68,
+        "se": 1.819,
+        "ci_low": 79.11,
+        "ci_high": 86.24,
+        "cv": 2.2,
+        "deff": 5.431
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 29.6,
+        "decrease_pp": 5.7,
+        "annex_note": "Excel Table A9.23 gives 23.86 (rounds to 23.9)"
+      },
+      "finscope": {
+        "banked": 27,
+        "other_formal": 68,
+        "informal_only": 3,
+        "excluded": 2,
+        "formally_served": 95,
+        "not_formally_served": 5,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Nyagatare",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 36.37,
+        "se": 2.79,
+        "ci_low": 30.89,
+        "ci_high": 41.84,
+        "cv": 7.67,
+        "deff": 2.507
+      },
+      "mobile_phone_households": {
+        "value": 84.01,
+        "se": 1.761,
+        "ci_low": 80.55,
+        "ci_high": 87.46,
+        "cv": 2.1,
+        "deff": 1.636
+      },
+      "smartphone_households": {
+        "value": 26.63,
+        "se": 2.609,
+        "ci_low": 21.52,
+        "ci_high": 31.75,
+        "cv": 9.79,
+        "deff": 2.468
+      },
+      "internet_households": {
+        "value": 23.04,
+        "se": 2.367,
+        "ci_low": 18.4,
+        "ci_high": 27.69,
+        "cv": 10.27,
+        "deff": 2.239
+      },
+      "health_insurance": {
+        "value": 81.56,
+        "se": 2.133,
+        "ci_low": 77.37,
+        "ci_high": 85.74,
+        "cv": 2.62,
+        "deff": 9.273
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 48.6,
+        "decrease_pp": 12.3,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 17,
+        "other_formal": 77,
+        "informal_only": 4,
+        "excluded": 3,
+        "formally_served": 94,
+        "not_formally_served": 7,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Gatsibo",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 18.41,
+        "se": 2.632,
+        "ci_low": 13.24,
+        "ci_high": 23.57,
+        "cv": 14.3,
+        "deff": 2.783
+      },
+      "mobile_phone_households": {
+        "value": 82.6,
+        "se": 2.053,
+        "ci_low": 78.58,
+        "ci_high": 86.63,
+        "cv": 2.49,
+        "deff": 1.736
+      },
+      "smartphone_households": {
+        "value": 25.74,
+        "se": 2.564,
+        "ci_low": 20.71,
+        "ci_high": 30.76,
+        "cv": 9.96,
+        "deff": 2.036
+      },
+      "internet_households": {
+        "value": 15.27,
+        "se": 2.18,
+        "ci_low": 11.0,
+        "ci_high": 19.55,
+        "cv": 14.27,
+        "deff": 2.174
+      },
+      "health_insurance": {
+        "value": 84.47,
+        "se": 1.879,
+        "ci_low": 80.79,
+        "ci_high": 88.16,
+        "cv": 2.22,
+        "deff": 6.691
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 38.0,
+        "decrease_pp": 19.6,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 23,
+        "other_formal": 73,
+        "informal_only": 3,
+        "excluded": 1,
+        "formally_served": 96,
+        "not_formally_served": 4,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": "Merged label \"31\" read visually at 600 dpi as informal 3 / excluded 1"
+      }
+    },
+    {
+      "district": "Kayonza",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 36.55,
+        "se": 3.231,
+        "ci_low": 30.22,
+        "ci_high": 42.89,
+        "cv": 8.84,
+        "deff": 2.573
+      },
+      "mobile_phone_households": {
+        "value": 82.63,
+        "se": 1.706,
+        "ci_low": 79.29,
+        "ci_high": 85.98,
+        "cv": 2.06,
+        "deff": 1.137
+      },
+      "smartphone_households": {
+        "value": 28.78,
+        "se": 2.381,
+        "ci_low": 24.11,
+        "ci_high": 33.45,
+        "cv": 8.27,
+        "deff": 1.549
+      },
+      "internet_households": {
+        "value": 14.28,
+        "se": 1.934,
+        "ci_low": 10.49,
+        "ci_high": 18.07,
+        "cv": 13.54,
+        "deff": 1.713
+      },
+      "health_insurance": {
+        "value": 83.05,
+        "se": 2.257,
+        "ci_low": 78.62,
+        "ci_high": 87.47,
+        "cv": 2.72,
+        "deff": 8.519
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 51.0,
+        "decrease_pp": 14.5,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 11,
+        "other_formal": 76,
+        "informal_only": 8,
+        "excluded": 5,
+        "formally_served": 87,
+        "not_formally_served": 13,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Kirehe",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 14.24,
+        "se": 2.128,
+        "ci_low": 10.06,
+        "ci_high": 18.41,
+        "cv": 14.95,
+        "deff": 1.762
+      },
+      "mobile_phone_households": {
+        "value": 84.47,
+        "se": 1.424,
+        "ci_low": 81.67,
+        "ci_high": 87.26,
+        "cv": 1.69,
+        "deff": 0.749
+      },
+      "smartphone_households": {
+        "value": 25.37,
+        "se": 2.64,
+        "ci_low": 20.2,
+        "ci_high": 30.55,
+        "cv": 10.4,
+        "deff": 1.783
+      },
+      "internet_households": {
+        "value": 16.69,
+        "se": 2.451,
+        "ci_low": 11.88,
+        "ci_high": 21.49,
+        "cv": 14.69,
+        "deff": 2.094
+      },
+      "health_insurance": {
+        "value": 89.41,
+        "se": 1.673,
+        "ci_low": 86.13,
+        "ci_high": 92.69,
+        "cv": 1.87,
+        "deff": 5.796
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 26.0,
+        "decrease_pp": 11.7,
+        "annex_note": "Decrease printed 11.7; 26.0 - 14.2 = 11.8 (rounding of unrounded inputs)"
+      },
+      "finscope": {
+        "banked": 7,
+        "other_formal": 86,
+        "informal_only": 5,
+        "excluded": 3,
+        "formally_served": 93,
+        "not_formally_served": 8,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Ngoma",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 30.94,
+        "se": 2.633,
+        "ci_low": 25.77,
+        "ci_high": 36.1,
+        "cv": 8.51,
+        "deff": 1.479
+      },
+      "mobile_phone_households": {
+        "value": 79.1,
+        "se": 2.151,
+        "ci_low": 74.88,
+        "ci_high": 83.32,
+        "cv": 2.72,
+        "deff": 1.305
+      },
+      "smartphone_households": {
+        "value": 25.13,
+        "se": 2.67,
+        "ci_low": 19.89,
+        "ci_high": 30.37,
+        "cv": 10.62,
+        "deff": 1.765
+      },
+      "internet_households": {
+        "value": 19.75,
+        "se": 2.685,
+        "ci_low": 14.49,
+        "ci_high": 25.02,
+        "cv": 13.59,
+        "deff": 2.119
+      },
+      "health_insurance": {
+        "value": 89.81,
+        "se": 1.537,
+        "ci_low": 86.79,
+        "ci_high": 92.82,
+        "cv": 1.71,
+        "deff": 4.855
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 34.0,
+        "decrease_pp": 3.1,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 9,
+        "other_formal": 77,
+        "informal_only": 6,
+        "excluded": 8,
+        "formally_served": 86,
+        "not_formally_served": 14,
+        "strand_sum": 100,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    },
+    {
+      "district": "Bugesera",
+      "province": "Eastern",
+      "poverty_rate": {
+        "value": 23.7,
+        "se": 2.626,
+        "ci_low": 18.55,
+        "ci_high": 28.85,
+        "cv": 11.08,
+        "deff": 2.431
+      },
+      "mobile_phone_households": {
+        "value": 87.66,
+        "se": 1.852,
+        "ci_low": 84.02,
+        "ci_high": 91.29,
+        "cv": 2.11,
+        "deff": 2.007
+      },
+      "smartphone_households": {
+        "value": 42.79,
+        "se": 2.929,
+        "ci_low": 37.04,
+        "ci_high": 48.53,
+        "cv": 6.85,
+        "deff": 2.218
+      },
+      "internet_households": {
+        "value": 38.46,
+        "se": 2.895,
+        "ci_low": 32.78,
+        "ci_high": 44.14,
+        "cv": 7.53,
+        "deff": 2.24
+      },
+      "health_insurance": {
+        "value": 83.73,
+        "se": 2.04,
+        "ci_low": 79.73,
+        "ci_high": 87.73,
+        "cv": 2.44,
+        "deff": 8.022
+      },
+      "poverty_trend": {
+        "poverty_2017_modelled": 40.8,
+        "decrease_pp": 17.1,
+        "annex_note": null
+      },
+      "finscope": {
+        "banked": 23,
+        "other_formal": 71,
+        "informal_only": 5,
+        "excluded": 2,
+        "formally_served": 94,
+        "not_formally_served": 7,
+        "strand_sum": 101,
+        "source_figure": "Figure 13 (p.31)",
+        "transcription_note": null
+      }
+    }
+  ]
+}
